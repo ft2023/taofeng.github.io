@@ -1,0 +1,1 @@
+I am an undergraduate student studying Computer Science at California Institute of Technology (Caltech). I am a researcher in the Computation & Cognition Lab (CoCoLab) at Stanford University. I have been fortunate to work with Prof. Anima Anandkumar (Caltech), Dr. Kaiyu Yang (Meta), Prof. Tim Sherwood (UC Santa Barbara), and Dr. Jeremy Lau (Google) during my undergrad.
