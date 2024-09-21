@@ -38,7 +38,7 @@
                 <name>Pengrui Han (Barry)</name>
               </p>
               <p>
-		I am an undergraduate student studying Math and CS at <strong>Carleton College</strong> (MN). I am a SURF Research Fellow at <strong>Caltech</strong>, where I am fortunate to work with Prof. <a href="http://tensorlab.cms.caltech.edu/users/anima/">Anima Anandkumar</a> and Dr. <a href="http://www.rkocielnik.com/">Rafał Kocielnik</a>. I am a Researcher in the <a href="https://github.com/ulab-uiuc">ULab</a> at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. 
+		I am an undergraduate student studying Math and CS at <strong>Carleton College</strong> (MN), advised by Prof. <a href="https://sites.google.com/site/annanrafferty/">Anna Rafferty</a>. I am a SURF Research Fellow at <strong>Caltech</strong>, where I am fortunate to work with Prof. <a href="http://tensorlab.cms.caltech.edu/users/anima/">Anima Anandkumar</a> and Dr. <a href="http://www.rkocielnik.com/">Rafał Kocielnik</a>. I am a Researcher in the <a href="https://github.com/ulab-uiuc">ULab</a> at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. 
 
     <!-- I am a research intern at <strong>NVIDIA</strong> <a href="https://research.nvidia.com/labs/gear/">GEAR lab</a>, working with Dr. <a href="https://jimfan.me/">Jim Fan</a>.    -->
               </p>
@@ -61,9 +61,11 @@
           <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>News</heading>
-	      <p> <b>[Aug. 2024]</b> Our paper on  <a href="https://openreview.net/pdf?id=qu6sMJmEwl">trustworthy LLM reasoning in ICL</a> is accepted to ICML 2024 Workshop on LLMs and Cognition: <a href=" https://youtu.be/EEv05T6idH8">Video</a> <br>
+	      <p>
+          <b>[Sep. 2024]</b>  Our paper on <a href="https://openreview.net/pdf?id=qu6sMJmEwl">LLM inhibitory control & A-not-B cognitive errors</a> is accepted to EMNLP 2024 Findings.<br> 
+          <!-- <b>[Aug. 2024]</b> Our paper on  <a href="https://openreview.net/pdf?id=qu6sMJmEwl">trustworthy LLM reasoning in ICL</a> is accepted to ICML 2024 Workshop on LLMs and Cognition: <a href=" https://youtu.be/EEv05T6idH8">Video</a> <br> -->
           <b>[July. 2024]</b>  Our paper on<a href="https://arxiv.org/abs/2402.11764"> synthetic data for debiasing</a> is accepted to COLM 2024.<br>
-          <b>[May. 2024]</b> We release <a href=" https://huggingface.co/spaces/ulab-ai/ArxivCopilot">Arxiv Copilot</a>, an automated research tool for personalized academic service.<br>
+          <b>[May. 2024]</b> We release <a href=" https://huggingface.co/spaces/ulab-ai/ArxivCopilot"> Paper Copilot</a>, an automated research tool for personalized academic service.<br>
           <b>[Apr. 2024]</b> Our paper on  <a href="https://openreview.net/pdf?id=sOSAu0XQcI"> Thought Retriever</a> is accepted to ICLR 2024 Workshop on How Far Are We From AGI.<br>
           <b>[Dec. 2023]</b>  I am joining <a href="https://github.com/ulab-uiuc">UIUC ULab</a>, working on foundation models and intelligent agents<br>
             </td>
@@ -123,7 +125,7 @@
               <br />
 	      <strong>Pengrui Han</strong>*, <a target="_blank" href="https://peiyang-song.github.io/">Peiyang Song</a>*, <a target="_blank" href="https://haofeiyu.me/">Haofei Yu</a>, and <a target="_blank" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
 	      <br />
-              <em>ICML Workshop on LLMs and Cognition</em>, 2024
+        <em>Findings of Empirical Methods in Natural Language Processing (EMNLP)</em>, 2024
               <br />
 	      <a target="_blank" href="https://github.com/Peiyang-Song/LLM-A-Not-B-Errors">code</a>
               <p></p>
@@ -162,6 +164,42 @@
               <em>Conference On Language Modeling (COLM)</em>, 2024
               <br />
 	      <a target="_blank" href="https://github.com/barryhpr/SyntheticDebiasing">code</a>
+              <p></p>
+              <p>
+                We propose a light and efficient pipeline that enables both domain and non-domain experts to quickly generate synthetic debiasing data to mitigate specific or general bias in their models with parameter-efficient fine-tuning.
+              </p>
+            </td>
+          </tr>
+
+          <tr onmouseout="papercopilot_stop()" onmouseover="papercopilot_start()">
+            <td style="padding:5px;width:17%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='papercopilot_image'>
+                  <img src='images/papercopilot-2.png' width="150" >
+                </div>
+                  <img src='images/papercopilot-1.png' width="150" >
+              </div>
+              <script type="text/javascript">
+                function papercopilot_start() {
+                  document.getElementById('papercopilot_image').style.opacity = "1";
+                }
+
+                function papercopilot_stop() {
+                  document.getElementById('papercopilot_image').style.opacity = "0";
+                }
+                papercopilot_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:83%;vertical-align:middle">
+              <a target="_blank" href="https://arxiv.org/abs/2409.04593">
+                <papertitle>Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance</papertitle>
+              </a>
+              <br />
+              <a target="_blank" href="https://macenter.wixsite.com/home/guanyulin">Guanyu Lin</a>*, <a target="_blank" href="https://github.com/ft2023">Tao Feng</a>*, <strong>Pengrui Han</strong>*,   <a target="_blank" href="https://www.mit.edu/~geliu/">Ge Liu</a>, <a target="_blank" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
+	      <br />
+              <em>Huggingface Live Demo: <a target="_blank" href="https://huggingface.co/spaces/ulab-ai/ArxivCopilot">Link</a></em>
+              <br />
+	      <!-- <a target="_blank" href="https://github.com/barryhpr/SyntheticDebiasing">code</a> -->
               <p></p>
               <p>
                 We propose a light and efficient pipeline that enables both domain and non-domain experts to quickly generate synthetic debiasing data to mitigate specific or general bias in their models with parameter-efficient fine-tuning.
