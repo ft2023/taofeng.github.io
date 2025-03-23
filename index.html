@@ -245,6 +245,45 @@
           </div>
         </div>
 
+        <!-- Paper Copilot Publication to add after Thought-Retriever -->
+<div class="pub-row" onmouseout="papercopilot_stop()" onmouseover="papercopilot_start()">
+  <div class="pub-img">
+    <div class="one">
+      <div class="two" id='papercopilot_image'>
+        <img src='images/papercopilot-2.png' width="150">
+      </div>
+      <img src='images/papercopilot-1.png' width="150">
+    </div>
+    <script type="text/javascript">
+      function papercopilot_start() {
+        document.getElementById('papercopilot_image').style.opacity = "1";
+      }
+      function papercopilot_stop() {
+        document.getElementById('papercopilot_image').style.opacity = "0";
+      }
+      papercopilot_stop()
+    </script>
+  </div>
+  <div class="pub-content">
+    <a target="_blank" href="https://arxiv.org/abs/2409.04593">
+      <papertitle>Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance</papertitle>
+    </a>
+    <br>
+    <a target="_blank" href="https://macenter.wixsite.com/home/guanyulin">Guanyu Lin</a>*, <a target="_blank" href="https://github.com/ft2023"><strong>Tao Feng</strong></a>*, Pengrui Han*, 
+    <a target="_blank" href="https://www.mit.edu/~geliu/">Ge Liu</a>, 
+    <a target="_blank" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
+    <br>
+    <em>System Demonstration Track of Empirical Methods in Natural Language Processing (EMNLP)</em>, 2024
+    <br>
+    <em>Huggingface Live Demo: <a target="_blank" href="https://huggingface.co/spaces/ulab-ai/ArxivCopilot">Link</a></em>
+    <p>
+      We propose a light and efficient pipeline that enables both domain and non-domain experts to quickly generate synthetic debiasing data to mitigate specific or general bias in their models with parameter-efficient fine-tuning.
+    </p>
+  </div>
+</div>
+
+        
+
         <!-- RL for Multi-agent Optimization -->
         <h2 class="topic-title">RL for Multi-agent Optimization</h2>
         
