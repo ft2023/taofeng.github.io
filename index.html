@@ -116,6 +116,7 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>News</heading>
               <p>
+                <b>[June. 2025]</b> Our preprints IRanker, FusionFactory, and Router-R1 were released.<br>
                 <b>[May. 2025]</b> Our papers Graph World Model and Researchtown were published at ICML 2025.<br>
                 <b>[March. 2025]</b> Our paper Graph of Records was published at ACL 2025.<br>
                 <b>[January. 2025]</b> Our papers GraphRouter and GraphEval were published at ICLR 2025.<br>
@@ -123,6 +124,10 @@
             </td>
           </tr>
         </tbody></table>
+
+
+
+
         
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
@@ -132,8 +137,253 @@
           </tr>
         </tbody></table>
 
+
+
+        <!-- Preprints -->
+        <h2 class="topic-title">Preprints</h2>
+
+
+          <!-- IRanker: Towards Ranking Foundation Model 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/IRanker1.jpg' width="150">
+              </div>
+              <img src='images/IRanker2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2506.21638">
+              <papertitle>IRanker: Towards Ranking Foundation Model</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Zhigang Hua, Zijie Lei, Yan Xie, Shuang Yang, Bo Long, 
+            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>Arxiv</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/IRanker">code</a>
+            <p>
+              We propose IRanker, a ranking FM framework with reinforcement
+                learning (RL) and iterative decoding to unify ranking tasks using
+                        a single ranking foundation model (FM).
+            </p>
+          </div>
+        </div>
+
+        <!-- Fusing LLM Capabilities with Routing Data 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/fuse1.jpg' width="150">
+              </div>
+              <img src='images/fuse2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2507.10540">
+              <papertitle>Fusing LLM Capabilities with Routing Data</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>*, Haozhen Zhang*, Zijie Lei, Pengrui Han, Mostofa Patwary, Mohammad Shoeybi, Bryan Catanzaro,
+            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>Arxiv</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/FusionFactory">code</a>
+            <p>
+              Based on FusionBench, we propose FusionFactory, a systematic LLM fusion framework with
+three representative levels: query-level fusion, thought-level fusion, and model-level fusion.
+            </p>
+          </div>
+        </div>
+
+        <!-- Router-R1: Teaching LLMs Multi-Round Routing and
+Aggregation via Reinforcement Learning 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/route1.jpg' width="150">
+              </div>
+              <img src='images/route2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2506.09033">
+              <papertitle>Router-R1: Teaching LLMs Multi-Round Routing and
+Aggregation via Reinforcement Learning</papertitle>
+            </a>
+            <br>
+            Haozhen Zhang, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>Arxiv</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/Router-R1">code</a>
+            <p>
+              We present Router-R1, a reinforcement learning
+(RL)-based framework that formulates multi-LLM routing and aggregation as a se-
+quential decision process.
+            </p>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+
         <!-- Graph-based LLM -->
         <h2 class="topic-title">Graph-based LLM</h2>
+
+        
+
+        <!-- Graph World Model 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/GraphRouter1.jpg' width="150">
+              </div>
+              <img src='images/GraphRouter2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://openreview.net/forum?id=eU39PDsZtT">
+              <papertitle>Graph World Model</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Yexin Wu,Guanyu Lin, 
+            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>ICML</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/GWM">code</a>
+            <p>
+              The Graph World Model (GWM) efficiently integrates unstructured and graph-structured multi-modal data, enhancing diverse tasks through a unified framework.
+            </p>
+          </div>
+        </div>
+
+        <!-- Researchtown 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/researchtown1.jpg' width="150">
+              </div>
+              <img src='images/researchtown2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2412.17767">
+              <papertitle>Researchtown</papertitle>
+            </a>
+            <br>
+            Haofei Yu, Zhaochen Hong, Zirui Cheng, Kunlun Zhu, Keyang Xuan, Jinwei Yao, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>ICML</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/research-town">code</a>
+            <p>
+              A graph-based multi-agent simulator for human research community.
+            </p>
+          </div>
+        </div>
+
+        <!-- Graph of Records 论文 -->
+        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='graphrouter_image'>
+                <img src='images/GOR1.jpg' width="150">
+              </div>
+              <img src='images/GOR2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function graphrouter_start() {
+                document.getElementById('graphrouter_image').style.opacity = "1";
+              }
+
+              function graphrouter_stop() {
+                document.getElementById('graphrouter_image').style.opacity = "0";
+              }
+              graphrouter_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2410.11001">
+              <papertitle>Researchtown</papertitle>
+            </a>
+            <br>
+            Haozhen Zhang, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>ACL</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/GoR">code</a>
+            <p>
+              We propose Graph of Records (GoR), a method to enhance RAG for long-context summarization by leveraging LLM-generated historical responses, which are often neglected.
+            </p>
+          </div>
+        </div>
+
+        
         
         <!-- GraphRouter 论文 -->
         <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
@@ -160,7 +410,7 @@
               <papertitle>GraphRouter: A Graph-based Router for LLM Selections</papertitle>
             </a>
             <br>
-            <strong>Tao Feng</strong>*, Yanzhen Shen*, 
+            <strong>Tao Feng</strong>, Yanzhen Shen, 
             and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
             <br>
             <em>ICLR</em>, 2025
