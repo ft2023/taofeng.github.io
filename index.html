@@ -96,7 +96,7 @@
                 <name>Tao Feng</name>
               </p>
               <p>
-                I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research interests center on automatic machine learning. Currently, my focus is on investigating the graph-based LLM and RLHF.
+                I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research interests center on LLMs. Currently, my focus is on investigating the LLM reasoning and Graph-based LLM.
               </p>
               <p style="text-align:center">
                 冯涛 &nbsp/&nbsp
@@ -257,7 +257,7 @@ three representative levels: query-level fusion, thought-level fusion, and model
 
         
 
-        <!-- Graph-based LLM -->
+     <!-- Graph-based LLM -->
         <h2 class="topic-title">Graph-based LLM</h2>
 
         <!-- Graph World Model 论文 -->
@@ -619,3 +619,245 @@ three representative levels: query-level fusion, thought-level fusion, and model
             Qianyue Hao, Wenzhen Huang, <strong>Tao Feng</strong>, Jian Yuan, Yong Li
             <br>
             <em>KDD</em>, 2023
+            <br>
+            <a target="_blank" href="https://github.com/tsinghua-fib-lab/Large-Scale-MARL-GATMF">code</a>
+            <p>
+              We introduce Graph Attention Mean Field (GAT-MF), a novel multi-agent reinforcement learning approach that reduces computational complexity and precisely models dynamic, diverse agent interactions, achieving significant performance and efficiency gains in experiments with over 3000 agents.
+            </p>
+          </div>
+        </div>
+
+        <!-- Causal Discovery and Inference -->
+        <h2 class="topic-title">Causal Discovery and Inference</h2>
+        
+        <!-- Causal Discovery 论文1 -->
+        <div class="pub-row" onmouseout="causal1_stop()" onmouseover="causal1_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='causal1_image'>
+                <img src='images/Causal1.jpg' width="150">
+              </div>
+              <img src='images/Causal2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function causal1_start() {
+                document.getElementById('causal1_image').style.opacity = "1";
+              }
+
+              function causal1_stop() {
+                document.getElementById('causal1_image').style.opacity = "0";
+              }
+              causal1_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2503.06395">
+              <papertitle>Causal Discovery and Inference towards Urban Elements and Associated Factors</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li
+            <br>
+            <em>arxiv</em>, 2025
+            <br>
+            <p>
+              We propose a novel urban causal computing framework that uses reinforcement learning to discover causal relationships among urban factors and reduce confounding effects, thereby improving urban mobility prediction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Causal Discovery 论文2 -->
+        <div class="pub-row" onmouseout="causal2_stop()" onmouseover="causal2_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='causal2_image'>
+                <img src='images/OD1.jpg' width="150">
+              </div>
+              <img src='images/OD2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function causal2_start() {
+                document.getElementById('causal2_image').style.opacity = "1";
+              }
+
+              function causal2_stop() {
+                document.getElementById('causal2_image').style.opacity = "0";
+              }
+              causal2_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/abs/2503.06398">
+              <papertitle>Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li
+            <br>
+            <em>arxiv</em>, 2025
+            <br>
+            <p>
+              We propose CE-OFP, which is a unified framework that transfers urban knowledge from data-rich cities to data-scarce ones by leveraging reinforcement learning for causal discovery, variational auto-encoders for feature reconstruction, and graph attention networks for knowledge distillation, resulting in up to an 11% reduction in OD flow prediction RMSE.
+            </p>
+          </div>
+        </div>
+
+        <!-- AI for Science -->
+        <h2 class="topic-title">AI for Science</h2>
+        
+        <!-- Protein Complexes 论文 -->
+        <div class="pub-row" onmouseout="protein_stop()" onmouseover="protein_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='protein_image'>
+                <img src='images/GAPN1.jpg' width="150">
+              </div>
+              <img src='images/GAPN2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function protein_start() {
+                document.getElementById('protein_image').style.opacity = "1";
+              }
+
+              function protein_stop() {
+                document.getElementById('protein_image').style.opacity = "0";
+              }
+              protein_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/abs/2405.02299">
+              <papertitle>Deep Reinforcement Learning for Modelling Protein Complexes</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Ziqi Gao, Jiaxuan You, Chenyi Zi, Yan Zhou, Chen Zhang, Jia Li
+            <br>
+            <em>ICLR</em>, 2024
+            <br>
+            <p>
+              We propose GAPN, a generative adversarial policy network that efficiently models multi-chain protein complexes by formulating the assembly as a graph search and leveraging policy gradient with adversarial rewards to achieve significant accuracy and efficiency improvements.
+            </p>
+          </div>
+        </div>
+
+        <!-- Molecular Design 论文 -->
+        <div class="pub-row" onmouseout="molecular_stop()" onmouseover="molecular_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='molecular_image'>
+                <img src='images/molecular1.jpg' width="150">
+              </div>
+              <img src='images/molecular2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function molecular_start() {
+                document.getElementById('molecular_image').style.opacity = "1";
+              }
+
+              function molecular_stop() {
+                document.getElementById('molecular_image').style.opacity = "0";
+              }
+              molecular_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/abs/2310.05365">
+              <papertitle>Molecular De Novo Design through Transformer-based Reinforcement Learning</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>, Pengcheng Xu, Tianfan Fu, Jimeng Sun
+            <br>
+            <em>arxiv</em>, 2024
+            <br>
+            <p>
+              We introduce a Transformer-based generative model for molecular de novo design that outperforms traditional RNN methods by effectively capturing long-term dependencies to generate active compounds with desired properties.
+            </p>
+          </div>
+        </div>
+
+        <!-- Surveys -->
+        <h2 class="topic-title">Surveys</h2>
+        
+        <!-- AGI Survey 论文 -->
+        <div class="pub-row" onmouseout="agi_stop()" onmouseover="agi_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='agi_image'>
+                <img src='images/AGI1.jpg' width="150">
+              </div>
+              <img src='images/AGI2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function agi_start() {
+                document.getElementById('agi_image').style.opacity = "1";
+              }
+
+              function agi_stop() {
+                document.getElementById('agi_image').style.opacity = "0";
+              }
+              agi_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://openreview.net/forum?id=H2ZKqfNd0U">
+              <papertitle>How Far Are We From AGI: Are LLMs All We Need?</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng*</strong>, Chuanyang Jin*, Jingyu Liu*, Kunlun Zhu*, Haoqin Tu, Zirui Cheng, Guanyu Lin, Jiaxuan You
+            <br>
+            <em>TMLR</em>, 2024
+            <br>
+            <p>
+              We provide a comprehensive exploration of AGI by defining its required capabilities, discussing alignment challenges, and outlining a strategic roadmap for responsible and impactful development across various domains.
+            </p>
+          </div>
+        </div>
+
+        <!-- DRL Survey 论文 -->
+        <div class="pub-row" onmouseout="drl_survey_stop()" onmouseover="drl_survey_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='drl_survey_image'>
+                <img src='images/DRL1.jpg' width="150">
+              </div>
+              <img src='images/DRL2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function drl_survey_start() {
+                document.getElementById('drl_survey_image').style.opacity = "1";
+              }
+
+              function drl_survey_stop() {
+                document.getElementById('drl_survey_image').style.opacity = "0";
+              }
+              drl_survey_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://dl.acm.org/doi/10.1145/3708325">
+              <papertitle>Deep Reinforcement Learning for Demand Driven Services in Logistics and Transportation Systems: A Survey</papertitle>
+            </a>
+            <br>
+            Zefang Zong, <strong>Tao Feng</strong>, Jingwei Wang, Tong Xia, Yong Li
+            <br>
+            <em>TKDD</em>, 2024
+            <br>
+            <p>
+              We review the challenges and deep reinforcement learning solutions for optimizing dispatching and routing in urban demand-driven services.
+            </p>
+          </div>
+        </div>
+        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                <a target="_blank" href="https://jonbarron.info/" style="text-align:right;font-size:small;">Site source</a>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
