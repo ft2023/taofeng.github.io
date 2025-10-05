@@ -134,6 +134,48 @@
           </tr>
         </tbody></table>
 
+
+        <!-- Preprints -->
+        <h2 class="topic-title">Preprints</h2>
+
+        <!-- FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data 论文 -->
+        <div class="pub-row" onmouseout="fusion_stop()" onmouseover="fusion_start()">
+          <div class="pub-img">
+            <div class="one">
+              <div class="two" id='fusion_image'>
+                <img src='images/fuse1.jpg' width="150">
+              </div>
+              <img src='images/fuse2.jpg' width="150">
+            </div>
+            <script type="text/javascript">
+              function fusion_start() {
+                document.getElementById('fusion_image').style.opacity = "1";
+              }
+
+              function fusion_stop() {
+                document.getElementById('fusion_image').style.opacity = "0";
+              }
+              fusion_stop()
+            </script>
+          </div>
+          <div class="pub-content">
+            <a target="_blank" href="https://arxiv.org/pdf/2507.10540">
+              <papertitle>FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data</papertitle>
+            </a>
+            <br>
+            <strong>Tao Feng</strong>*, Haozhen Zhang*, Zijie Lei, Pengrui Han, Mostofa Patwary, Mohammad Shoeybi, Bryan Catanzaro,
+            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
+            <br>
+            <em>Arxiv</em>, 2025
+            <br>
+            <a target="_blank" href="https://github.com/ulab-uiuc/FusionFactory">code</a>
+            <p>
+              Based on LLMFusionBench, we propose FusionFactory, a systematic LLM fusion framework with
+three representative levels: query-level fusion, thought-level fusion, and model-level fusion.
+            </p>
+          </div>
+        </div>
+
         <!-- LLM Reasoning -->
         <h2 class="topic-title">LLM Reasoning</h2>
 
@@ -213,46 +255,7 @@
           </div>
         </div>
 
-        <!-- Preprints -->
-        <h2 class="topic-title">Preprints</h2>
-
-        <!-- FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data 论文 -->
-        <div class="pub-row" onmouseout="fusion_stop()" onmouseover="fusion_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='fusion_image'>
-                <img src='images/fuse1.jpg' width="150">
-              </div>
-              <img src='images/fuse2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function fusion_start() {
-                document.getElementById('fusion_image').style.opacity = "1";
-              }
-
-              function fusion_stop() {
-                document.getElementById('fusion_image').style.opacity = "0";
-              }
-              fusion_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2507.10540">
-              <papertitle>FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>*, Haozhen Zhang*, Zijie Lei, Pengrui Han, Mostofa Patwary, Mohammad Shoeybi, Bryan Catanzaro,
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>Arxiv</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/FusionFactory">code</a>
-            <p>
-              Based on LLMFusionBench, we propose FusionFactory, a systematic LLM fusion framework with
-three representative levels: query-level fusion, thought-level fusion, and model-level fusion.
-            </p>
-          </div>
-        </div>
+        
 
         <!-- Graph-based LLM -->
         <h2 class="topic-title">Graph-based LLM</h2>
