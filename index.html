@@ -1,21 +1,18 @@
 <!DOCTYPE HTML>
 <html lang="en">
 
-<head>    
+<head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B5LHBSZYY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-0B5LHBSZYY');
   </script>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <title>Tao Feng</title>
-
   <meta name="author" content="Tao Feng">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,839 +22,1014 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/logo.jpg">
   <link rel="manifest" href="images/site.webmanifest">
 
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <meta name="google-site-verification" content="SppVkSFcpllgYfMj_yChDn5QreKfTWW1_cEwRTvVBMY" />
+
   <style>
-    .topic-title {
-      color: #2c3e50;
-      font-size: 24px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #3498db;
+    /* ---- Reset & Base ---- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+      line-height: 1.6;
     }
-    
-    .pub-row {
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- Header / Bio ---- */
+    .header-section {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 40px 0;
+    }
+    .bio-row {
       display: flex;
-      margin-bottom: 30px;
-      align-items: flex-start;
+      align-items: center;
+      gap: 40px;
     }
-    
-    .pub-img {
-      width: 150px;
-      flex-shrink: 0;
-      margin-right: 20px;
+    .bio-text { flex: 1; }
+    .bio-text h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #0f172a;
     }
-    
-    .pub-content {
-      flex-grow: 1;
+    .bio-text p {
+      font-size: 16px;
+      color: #334155;
+      margin-bottom: 12px;
+      line-height: 1.7;
     }
-    
-    .one {
+    .bio-text p strong {
+      color: #0f172a;
+    }
+    .bio-thrusts {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+    }
+    .bio-thrusts li {
+      font-size: 15.5px;
+      color: #334155;
+      padding: 6px 0 6px 22px;
       position: relative;
-      width: 150px;
+      line-height: 1.6;
     }
-    
-    .two {
+    .bio-thrusts li::before {
+      content: "▸";
       position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
+      left: 4px;
+      color: #2563eb;
+      font-weight: 700;
     }
-    
-    papertitle {
-      font-weight: bold;
-      font-size: 18px;
-      color: #2980b9;
+    .bio-thrusts li strong {
+      color: #0f172a;
+      font-weight: 700;
     }
-    
-    heading {
+    .bio-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .bio-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2563eb;
+    }
+    .bio-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    /* ---- News ---- */
+    .news-section {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 30px 0;
+    }
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #2563eb;
+      display: inline-block;
+    }
+    .news-list {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.8;
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      border-radius: 8px;
+      padding: 20px 24px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .news-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .news-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .news-list::-webkit-scrollbar-thumb {
+      background: #d4a054;
+      border-radius: 3px;
+    }
+    .news-list::-webkit-scrollbar-thumb:hover {
+      background: #b8860b;
+    }
+    .news-item {
+      margin-bottom: 16px;
+    }
+    .news-item:last-child {
+      margin-bottom: 0;
+    }
+    .news-date {
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .news-item a {
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .news-list b { color: #1e293b; }
+
+    /* ---- Publications Section ---- */
+    .pub-section {
+      padding: 40px 0 60px;
+    }
+
+    /* Search Bar */
+    .search-wrapper {
+      position: relative;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+    #pub-search {
+      width: 100%;
+      padding: 10px 16px 10px 40px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    #pub-search:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+
+    /* Filter Tags */
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .filter-btn {
+      background: #f1f5f9;
+      color: #475569;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .filter-btn:hover {
+      background: #e2e8f0;
+    }
+    .filter-btn.active {
+      background: #1d4ed8;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Publication Grid */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 1024px) {
+      .pub-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .pub-grid { grid-template-columns: 1fr; }
+      .bio-row { flex-direction: column-reverse; text-align: center; }
+      .bio-links { justify-content: center; }
+    }
+
+    /* Category Section Headers */
+    .category-header {
+      grid-column: 1 / -1;
       font-size: 22px;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3b82f6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    
-    name {
-      font-size: 28px;
-      font-weight: bold;
+    .category-header:first-child {
+      margin-top: 0;
+    }
+    .category-count {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+
+    /* Publication Card */
+    .pub-card {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.3s ease;
+    }
+    .pub-card:hover {
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-color: #bfdbfe;
+      transform: translateY(-2px);
+    }
+    .pub-card-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .pub-card-title a {
+      color: #1e40af;
+    }
+    .pub-card-title a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+    .pub-card-authors {
+      font-size: 13.5px;
+      color: #64748b;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .pub-card-authors strong {
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .pub-card-venue {
+      font-size: 13.5px;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .pub-card-footer {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .pub-card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .pub-card-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .pub-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .inline-tag {
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .inline-tag:hover {
+      background: #e2e8f0;
+    }
+
+    /* No results */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px 0;
+      color: #94a3b8;
+      font-size: 16px;
+    }
+    .no-results button {
+      margin-top: 8px;
+      background: none;
+      border: none;
+      color: #2563eb;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .no-results button:hover { text-decoration: underline; }
+
+    /* Footer */
+    .footer {
+      text-align: right;
+      padding: 20px 0;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:1.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Tao Feng</name>
-              </p>
-              <p>
-                I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research interests center on LLMs. Currently, my focus is on investigating the LLM reasoning and Graph-based LLM.
-              </p>
-              <p style="text-align:center">
-                冯涛 &nbsp/&nbsp
-                <a target="_blank" href="mailto:taofeng2@illinois.edu">Email</a> &nbsp/&nbsp
-                <a target="_blank" href="https://scholar.google.com/citations?user=3xK6SlIAAAAJ&hl=en&authuser=1">Google Scholar</a> &nbsp/&nbsp
-                <a target="_blank" href="https://github.com/ft2023">GitHub</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:37%;max-width:37%">
-              <a href="images/133501742692355_.pic_hd.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/133501742692355_.pic_hd.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>News</heading>
-              <p>
-                <b>[June. 2025]</b> Router-R1 was published at NeurIPS 2025.<br>
-                <b>[June. 2025]</b> Our preprints IRanker, FusionFactory, and Router-R1 were released.<br>
-                <b>[May. 2025]</b> Our papers Graph World Model and Researchtown were published at ICML 2025.<br>
-                <b>[March. 2025]</b> Our paper Graph of Records was published at ACL 2025.<br>
-                <b>[January. 2025]</b> Our papers GraphRouter and GraphEval were published at ICLR 2025.<br>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Selected Publications by Research Topics</heading>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-        <!-- Preprints -->
-        <h2 class="topic-title">Preprints</h2>
-
-        <!-- FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data 论文 -->
-        <div class="pub-row" onmouseout="fusion_stop()" onmouseover="fusion_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='fusion_image'>
-                <img src='images/fuse1.jpg' width="150">
-              </div>
-              <img src='images/fuse2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function fusion_start() {
-                document.getElementById('fusion_image').style.opacity = "1";
-              }
-
-              function fusion_stop() {
-                document.getElementById('fusion_image').style.opacity = "0";
-              }
-              fusion_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2507.10540">
-              <papertitle>FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>*, Haozhen Zhang*, Zijie Lei, Pengrui Han, Mostofa Patwary, Mohammad Shoeybi, Bryan Catanzaro,
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>Arxiv</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/FusionFactory">code</a>
-            <p>
-              Based on LLMFusionBench, we propose FusionFactory, a systematic LLM fusion framework with
-three representative levels: query-level fusion, thought-level fusion, and model-level fusion.
-            </p>
+  <!-- ======== Header / Bio ======== -->
+  <div class="header-section">
+    <div class="container">
+      <div class="bio-row">
+        <div class="bio-text">
+          <h1>Tao Feng</h1>
+          <p>
+            I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research centers on building <strong>agentic AI systems</strong> that can autonomously reason, decide, remember, and collaborate. My mission is to push the frontier of LLM-powered agents through reinforcement learning, memory mechanisms, and graph-based intelligence. To achieve this, my work currently spans the following major research thrusts:
+          </p>
+          <ul class="bio-thrusts">
+            <li><strong>Agentic RL:</strong> Reinforcement learning for autonomous agent decision-making at scale.</li>
+            <li><strong>Agentic Memory:</strong> Memory mechanisms enabling self-evolving and long-horizon agents.</li>
+            <li><strong>Agentic LLM Reasoning:</strong> Teaching LLMs to reason and plan via RL-based training.</li>
+            <li><strong>Agentic LLM Routing & Orchestration:</strong> Intelligent multi-LLM selection, routing, and collaboration.</li>
+            <li><strong>Agentic Graph Intelligence:</strong> Graph-based frameworks for LLM agents and structured reasoning.</li>
+            <li><strong>Agentic AI for Science:</strong> Deploying agentic systems to accelerate scientific discovery.</li>
+          </ul>
+          <p>
+            These thrusts are powered by rigorous research at the intersection of <strong>RL, Memory, LLMs, and Graph Learning</strong>, with the goal of architecting trustworthy AI agents that serve as partners for human advancement.
+          </p>
+          <div class="bio-links">
+            <span style="color:#475569">冯涛</span>
+            <a href="mailto:taofeng2@illinois.edu">Email</a>
+            <a href="https://scholar.google.com/citations?user=3xK6SlIAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
+            <a href="https://github.com/ft2023" target="_blank">GitHub</a>
           </div>
         </div>
+        <img class="bio-photo" src="images/133501742692355_.pic_hd.jpg" alt="Tao Feng">
+      </div>
+    </div>
+  </div>
 
-        <!-- LLM Reasoning -->
-        <h2 class="topic-title">LLM Reasoning</h2>
-
-        <!-- R1-Ranker: Teaching LLM Rankers to Reason 论文 -->
-        <div class="pub-row" onmouseout="iranker_stop()" onmouseover="iranker_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='iranker_image'>
-                <img src='images/IRanker1.jpg' width="150">
-              </div>
-              <img src='images/IRanker2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function iranker_start() {
-                document.getElementById('iranker_image').style.opacity = "1";
-              }
-
-              function iranker_stop() {
-                document.getElementById('iranker_image').style.opacity = "0";
-              }
-              iranker_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2506.21638">
-              <papertitle>R1-Ranker: Teaching LLM Rankers to Reason</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Zhigang Hua, Zijie Lei, Yan Xie, Shuang Yang, Bo Long, 
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>IJCAI2025 workshop Causal Learning for Recommendation Systems</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/IRanker">code</a>
-            <p>
-              We propose R1-Ranker, a ranking FM framework with reinforcement
-                learning (RL) and iterative decoding to unify ranking tasks using
-                        a single ranking foundation model (FM).
-            </p>
-          </div>
+  <!-- ======== News ======== -->
+  <div class="news-section">
+    <div class="container">
+      <h2 class="section-title">News</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Introducing <a href="https://arxiv.org/abs/2602.06025" target="_blank">BudgetMem</a>, a runtime agent memory framework for explicit performance-cost control. <strong>BudgetMem</strong> equips each memory module with Low/Mid/High budget tiers and learns query-aware budget-tier routing to deliver controllable on-demand memory extraction.
         </div>
-
-        <!-- Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning 论文 -->
-        <div class="pub-row" onmouseout="router_stop()" onmouseover="router_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='router_image'>
-                <img src='images/route1.jpg' width="150">
-              </div>
-              <img src='images/route2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function router_start() {
-                document.getElementById('router_image').style.opacity = "1";
-              }
-
-              function router_stop() {
-                document.getElementById('router_image').style.opacity = "0";
-              }
-              router_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2506.09033">
-              <papertitle>Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning</papertitle>
-            </a>
-            <br>
-            Haozhen Zhang, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>NeurIPS</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/Router-R1">code</a>
-            <p>
-              We present Router-R1, a reinforcement learning
-(RL)-based framework that formulates multi-LLM routing and aggregation as a sequential decision process.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Released <a href="https://arxiv.org/abs/2602.02474" target="_blank">MemSkill</a>, a framework for learning and evolving memory skills for LLM agents. <strong>MemSkill</strong> shifts agent memory to span-level, skill-conditioned generation, enabling reusable and self-evolving memory behaviors.
         </div>
-
-        
-
-     <!-- Graph-based LLM -->
-        <h2 class="topic-title">Graph-based LLM</h2>
-
-        <!-- Graph World Model 论文 -->
-        <div class="pub-row" onmouseout="gwm_stop()" onmouseover="gwm_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='gwm_image'>
-                <img src='images/GraphRouter1.jpg' width="150">
-              </div>
-              <img src='images/GraphRouter2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function gwm_start() {
-                document.getElementById('gwm_image').style.opacity = "1";
-              }
-
-              function gwm_stop() {
-                document.getElementById('gwm_image').style.opacity = "0";
-              }
-              gwm_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://openreview.net/forum?id=eU39PDsZtT">
-              <papertitle>Graph World Model</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Yexin Wu,Guanyu Lin, 
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>ICML</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/GWM">code</a>
-            <p>
-              The Graph World Model (GWM) efficiently integrates unstructured and graph-structured multi-modal data, enhancing diverse tasks through a unified framework.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2026.01]</span> &#x1F389; <a href="https://openreview.net/forum?id=GraphPlanner" target="_blank">GraphPlanner</a> was accepted at <strong>ICLR 2026</strong>! A graph memory-augmented agentic routing framework for multi-agent LLMs.
         </div>
-
-        <!-- Researchtown 论文 -->
-        <div class="pub-row" onmouseout="researchtown_stop()" onmouseover="researchtown_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='researchtown_image'>
-                <img src='images/researchtown1.jpg' width="150">
-              </div>
-              <img src='images/researchtown2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function researchtown_start() {
-                document.getElementById('researchtown_image').style.opacity = "1";
-              }
-
-              function researchtown_stop() {
-                document.getElementById('researchtown_image').style.opacity = "0";
-              }
-              researchtown_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2412.17767">
-              <papertitle>Researchtown</papertitle>
-            </a>
-            <br>
-            Haofei Yu, Zhaochen Hong, Zirui Cheng, Kunlun Zhu, Keyang Xuan, Jinwei Yao, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>ICML</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/research-town">code</a>
-            <p>
-              A graph-based multi-agent simulator for human research community.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2025.12]</span> &#x1F680;&#x1F680; Open-sourced <a href="https://github.com/ulab-uiuc/LLMRouter" target="_blank">LLMRouter</a>, a unified and extensible framework for training, evaluating, and benchmarking single-round, multi-round, agentic, and personalized LLM routers. <strong>LLMRouter</strong> is designed to reduce duplicated engineering effort, enable fair comparison across routing methods, and foster community-driven development. &#x2B50; <strong style="color:#f59e0b;">1,600+ GitHub Stars!</strong> We warmly welcome contributions and integrations from the community!
         </div>
-
-        <!-- Graph of Records 论文 -->
-        <div class="pub-row" onmouseout="gor_stop()" onmouseover="gor_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='gor_image'>
-                <img src='images/GOR1.jpg' width="150">
-              </div>
-              <img src='images/GOR2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function gor_start() {
-                document.getElementById('gor_image').style.opacity = "1";
-              }
-
-              function gor_stop() {
-                document.getElementById('gor_image').style.opacity = "0";
-              }
-              gor_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2410.11001">
-              <papertitle>Graph of Records</papertitle>
-            </a>
-            <br>
-            Haozhen Zhang, <strong>Tao Feng</strong>, and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>ACL</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/GoR">code</a>
-            <p>
-              We propose Graph of Records (GoR), a method to enhance RAG for long-context summarization by leveraging LLM-generated historical responses, which are often neglected.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2025.06]</span> &#x1F389; <a href="https://arxiv.org/pdf/2506.09033" target="_blank">Router-R1</a> was accepted at <strong>NeurIPS 2025</strong>! Teaching LLMs multi-round routing and aggregation via reinforcement learning.
         </div>
-        
-        <!-- GraphRouter 论文 -->
-        <div class="pub-row" onmouseout="graphrouter_stop()" onmouseover="graphrouter_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='graphrouter_image'>
-                <img src='images/GraphRouter1.jpg' width="150">
-              </div>
-              <img src='images/GraphRouter2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function graphrouter_start() {
-                document.getElementById('graphrouter_image').style.opacity = "1";
-              }
-
-              function graphrouter_stop() {
-                document.getElementById('graphrouter_image').style.opacity = "0";
-              }
-              graphrouter_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://openreview.net/forum?id=eU39PDsZtT">
-              <papertitle>GraphRouter: A Graph-based Router for LLM Selections</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Yanzhen Shen, 
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a>
-            <br>
-            <em>ICLR</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/GraphRouter">code</a>
-            <p>
-              We propose GraphRouter, a novel graph-based router that improves LLM selection for diverse tasks by leveraging an inductive graph framework to optimize performance-cost trade-offs and generalize across various models and scenarios.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2025.05]</span> &#x1F389; Two papers accepted at <strong>ICML 2025</strong>: <a href="https://arxiv.org/pdf/2507.10539" target="_blank">Graph World Model</a> and <a href="https://arxiv.org/pdf/2412.17767" target="_blank">Researchtown</a>.
         </div>
-
-        <!-- GraphEval 论文 -->
-        <div class="pub-row" onmouseout="grapheval_stop()" onmouseover="grapheval_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='grapheval_image'>
-                <img src='images/GraphEval1.jpg' width="150">
-              </div>
-              <img src='images/GraphEval2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function grapheval_start() {
-                document.getElementById('grapheval_image').style.opacity = "1";
-              }
-
-              function grapheval_stop() {
-                document.getElementById('grapheval_image').style.opacity = "0";
-              }
-              grapheval_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://openreview.net/forum?id=5RUM1aIdok&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2025%2FConference%2FAuthors%23your-submissions)">
-              <papertitle>GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>*, Yihang Sun*, 
-            and <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
-            <br>
-            <em>ICLR</em>, 2025
-            <br>
-            <a target="_blank" href="https://github.com/ulab-uiuc/GraphEval">code</a>
-            <p>
-              GraphEval is a lightweight, graph-based LLM framework for idea evaluation, offering two methods: GraphEval-LP (training-free) and GraphEval-GNN (minimally trained).
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2025.03]</span> &#x1F389; <a href="https://arxiv.org/pdf/2410.11001" target="_blank">Graph of Records</a> was accepted at <strong>ACL 2025</strong>.
         </div>
-
-        <!-- Thought-Retriever 论文 -->
-        <div class="pub-row" onmouseout="tr_stop()" onmouseover="tr_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='tr_image'>
-                <img src='images/Thought-Retriever1.jpg' width="150">
-              </div>
-              <img src='images/Thought-Retriever2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function tr_start() {
-                document.getElementById('tr_image').style.opacity = "1";
-              }
-
-              function tr_stop() {
-                document.getElementById('tr_image').style.opacity = "0";
-              }
-              tr_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://openreview.net/pdf?id=sOSAu0XQcI">
-              <papertitle>Thought-Retriever: Don't Just Retrieve Raw Data, Retrieve Thoughts</papertitle>
-            </a>
-            <br>
-            <a href="https://github.com/ft2023" target="_blank"><strong>Tao Feng</strong></a>*, Pengrui Han*, 
-                <a href="https://macenter.wixsite.com/home/guanyulin" target="_blank">Guanyu Lin</a>*, 
-                <a href="https://www.mit.edu/~geliu/" target="_blank">Ge Liu</a>, 
-                <a href="https://cs.stanford.edu/~jiaxuan/" target="_blank">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
-            <br>
-            <em>ICLR Workshop on How Far Are We From AGI</em>, 2024
-            <br>
-            <p>
-              We introduce <strong>Thought-Retriever</strong> a novel model-agnostic algorithm that enables LLMs to effectively utilize external data without being limited by context length.
-            </p>
-          </div>
+        <div class="news-item">
+          <span class="news-date">[2025.01]</span> &#x1F389; Two papers accepted at <strong>ICLR 2025</strong>: <a href="https://openreview.net/forum?id=eU39PDsZtT" target="_blank">GraphRouter</a> and <a href="https://openreview.net/forum?id=5RUM1aIdok" target="_blank">GraphEval</a>.
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Paper Copilot Publication -->
-        <div class="pub-row" onmouseout="papercopilot_stop()" onmouseover="papercopilot_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='papercopilot_image'>
-                <img src='images/papercopilot-2.png' width="150">
-              </div>
-              <img src='images/papercopilot-1.png' width="150">
-            </div>
-            <script type="text/javascript">
-              function papercopilot_start() {
-                document.getElementById('papercopilot_image').style.opacity = "1";
-              }
-              function papercopilot_stop() {
-                document.getElementById('papercopilot_image').style.opacity = "0";
-              }
-              papercopilot_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/abs/2409.04593">
-              <papertitle>Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance</papertitle>
-            </a>
-            <br>
-            <a target="_blank" href="https://macenter.wixsite.com/home/guanyulin">Guanyu Lin</a>*, <a target="_blank" href="https://github.com/ft2023"><strong>Tao Feng</strong></a>*, Pengrui Han*, 
-            <a target="_blank" href="https://www.mit.edu/~geliu/">Ge Liu</a>, 
-            <a target="_blank" href="https://cs.stanford.edu/~jiaxuan/">Jiaxuan You</a> (* <strong>Equal Contribution</strong>)
-            <br>
-            <em>System Demonstration Track of Empirical Methods in Natural Language Processing (EMNLP)</em>, 2024
-            <br>
-            <em>Huggingface Live Demo: <a target="_blank" href="https://huggingface.co/spaces/ulab-ai/ArxivCopilot">Link</a></em>
-            <p>
-              We propose a light and efficient pipeline that enables both domain and non-domain experts to quickly generate synthetic debiasing data to mitigate specific or general bias in their models with parameter-efficient fine-tuning.
-            </p>
-          </div>
-        </div>
+  <!-- ======== Publications ======== -->
+  <div class="pub-section" id="publications">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
 
-        <!-- RL for Multi-agent Optimization -->
-        <h2 class="topic-title">RL for Multi-agent Optimization</h2>
-        
-        <!-- ILRoute 论文 -->
-        <div class="pub-row" onmouseout="ilroute_stop()" onmouseover="ilroute_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='ilroute_image'>
-                <img src='images/ILRoute1.jpg' width="150">
-              </div>
-              <img src='images/ILRoute2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function ilroute_start() {
-                document.getElementById('ilroute_image').style.opacity = "1";
-              }
+      <!-- Search -->
+      <div class="search-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="pub-search" placeholder="Search by title or tag...">
+      </div>
 
-              function ilroute_stop() {
-                document.getElementById('ilroute_image').style.opacity = "0";
-              }
-              ilroute_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3580305.3599844">
-              <papertitle>ILRoute: A Graph-based Imitation Learning Method to Unveil Riders' Routing Strategies in Food Delivery Service</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Huan Yan, Huandong Wang, Wenzhen Huang, Yuyang Han, Hongsen Liao, Jinghua Hao, Yong Li
-            <br>
-            <em>KDD</em>, 2023
-            <br>
-            <p>
-              We introduce ILRoute, a graph-based imitation learning approach for Pick-up and Delivery Route Prediction (PDRP) that effectively models complex, multi-source feature interactions and personalized rider preferences, demonstrating superior performance through both offline and online evaluations.
-            </p>
-          </div>
-        </div>
+      <!-- Filter Tags -->
+      <div class="filter-tags" id="filter-tags"></div>
 
-        <!-- Mobility Intervention 论文 -->
-        <div class="pub-row" onmouseout="mobility_stop()" onmouseover="mobility_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='mobility_image'>
-                <img src='images/EP1.jpg' width="150">
-              </div>
-              <img src='images/EP2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function mobility_start() {
-                document.getElementById('mobility_image').style.opacity = "1";
-              }
+      <!-- Grid -->
+      <div class="pub-grid" id="pub-grid"></div>
+    </div>
+  </div>
 
-              function mobility_stop() {
-                document.getElementById('mobility_image').style.opacity = "0";
-              }
-              mobility_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3534678.3539195">
-              <papertitle>Precise mobility intervention for epidemic control using unobservable information via deep reinforcement learning</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Tong Xia, Xiaochen Fan, Huandong Wang, Zefang Zong, Yong Li
-            <br>
-            <em>KDD</em>, 2022
-            <br>
-            <p>
-              We introduce Vehicle, a variational hierarchical reinforcement learning framework that reconstructs unobservable epidemic risks and overcomes delayed rewards to enable precise individual mobility interventions for controlling COVID-19 spread.
-            </p>
-          </div>
-        </div>
+  <!-- ======== Footer ======== -->
+  <div class="container">
+    <div class="footer">
+      <a href="https://jonbarron.info/" target="_blank" style="color:#94a3b8">Site source</a>
+    </div>
+  </div>
 
-        <!-- GAT-MF 论文 -->
-        <div class="pub-row" onmouseout="gatmf_stop()" onmouseover="gatmf_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='gatmf_image'>
-                <img src='images/GAT-MF1.jpg' width="150">
-              </div>
-              <img src='images/GAT-MF2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function gatmf_start() {
-                document.getElementById('gatmf_image').style.opacity = "1";
-              }
+  <!-- ======== Publication Data & Rendering ======== -->
+  <script>
+  // Research direction order
+  const CATEGORIES = [
+    "Agentic RL",
+    "Agentic Memory",
+    "Agentic LLM Reasoning",
+    "Agentic LLM Routing & Orchestration",
+    "Agentic Graph Intelligence",
+    "Agentic AI for Science",
+    "Causal Discovery and Inference",
+    "Surveys"
+  ];
 
-              function gatmf_stop() {
-                document.getElementById('gatmf_image').style.opacity = "0";
-              }
-              gatmf_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3580305.3599359">
-              <papertitle>GAT-MF: Graph Attention Mean Field for Very Large Scale Multi-Agent Reinforcement Learning</papertitle>
-            </a>
-            <br>
-            Qianyue Hao, Wenzhen Huang, <strong>Tao Feng</strong>, Jian Yuan, Yong Li
-            <br>
-            <em>KDD</em>, 2023
-            <br>
-            <a target="_blank" href="https://github.com/tsinghua-fib-lab/Large-Scale-MARL-GATMF">code</a>
-            <p>
-              We introduce Graph Attention Mean Field (GAT-MF), a novel multi-agent reinforcement learning approach that reduces computational complexity and precisely models dynamic, diverse agent interactions, achieving significant performance and efficiency gains in experiments with over 3000 agents.
-            </p>
-          </div>
-        </div>
+  const PUBS = [
+    // ---- Agentic LLM Reasoning ----
+    {
+      title: "FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data",
+      authors: ["Tao Feng*", "Haozhen Zhang*", "Zijie Lei", "Pengrui Han", "Mostofa Patwary", "Mohammad Shoeybi", "Bryan Catanzaro", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic LLM Reasoning",
+      tags: ["LLM Reasoning", "LLM with RL", "Agent"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2507.10540" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/FusionFactory" }
+      ]
+    },
+    {
+      title: "R1-Ranker: Teaching LLM Rankers to Reason",
+      authors: ["Tao Feng", "Zhigang Hua", "Zijie Lei", "Yan Xie", "Shuang Yang", "Bo Long", "Jiaxuan You"],
+      venue: "IJCAI 2025 Workshop on Causal Learning for Recommendation Systems",
+      category: "Agentic LLM Reasoning",
+      extraCategories: ["Agentic RL"],
+      tags: ["LLM Reasoning", "LLM with RL", "Recsys"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2506.21638" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/IRanker" }
+      ]
+    },
+    {
+      title: "Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning",
+      authors: ["Haozhen Zhang", "Tao Feng", "Jiaxuan You"],
+      venue: "NeurIPS, 2025",
+      category: "Agentic LLM Reasoning",
+      extraCategories: ["Agentic RL"],
+      tags: ["LLM Reasoning", "LLM with RL", "Router", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2506.09033" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/Router-R1" }
+      ]
+    },
+    {
+      title: "Multi-Agent Evolve: LLM Self-Improve through Co-evolution",
+      authors: ["Yixing Chen", "Yiding Wang", "Siqi Zhu", "Haofei Yu", "Tao Feng", "Muhan Zhang", "Mostofa Patwary", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic LLM Reasoning",
+      extraCategories: ["Agentic RL"],
+      tags: ["LLM Reasoning", "Self Evolve", "Agent"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2510.23595" }
+      ]
+    },
+    {
+      title: "Citing: Large Language Models Create Curriculum for Instruction Tuning",
+      authors: ["Tao Feng", "Zifeng Wang", "Jimeng Sun"],
+      venue: "Arxiv, 2023",
+      category: "Agentic LLM Reasoning",
+      tags: ["LLM Reasoning", "LLM"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2310.02527" }
+      ]
+    },
 
-        <!-- Causal Discovery and Inference -->
-        <h2 class="topic-title">Causal Discovery and Inference</h2>
-        
-        <!-- Causal Discovery 论文1 -->
-        <div class="pub-row" onmouseout="causal1_stop()" onmouseover="causal1_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='causal1_image'>
-                <img src='images/Causal1.jpg' width="150">
-              </div>
-              <img src='images/Causal2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function causal1_start() {
-                document.getElementById('causal1_image').style.opacity = "1";
-              }
+    // ---- Agentic LLM Routing & Orchestration ----
+    {
+      title: "GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs",
+      authors: ["Tao Feng", "Haozhen Zhang", "Pengrui Han", "Zijie Lei", "Jiaxuan You"],
+      venue: "ICLR, 2026",
+      category: "Agentic LLM Routing & Orchestration",
+      extraCategories: ["Agentic RL", "Agentic Memory"],
+      tags: ["Router", "Agent", "Graph", "Memory", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://openreview.net/forum?id=GraphPlanner" }
+      ]
+    },
+    {
+      title: "GraphRouter: A Graph-based Router for LLM Selections",
+      authors: ["Tao Feng", "Yanzhen Shen", "Jiaxuan You"],
+      venue: "ICLR, 2025",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Router", "Graph", "LLM Router", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://openreview.net/forum?id=eU39PDsZtT" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/GraphRouter" }
+      ]
+    },
+    {
+      title: "PersonalizedRouter: Personalized LLM Routing via Graph-based User Preference Modeling",
+      authors: ["Zhongjie Dai*", "Tao Feng*", "Jiaxuan You"],
+      venue: "TMLR, 2025",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Router", "Graph", "Personalization", "LLM Router", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2511.16883" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/PersonalizedRouter" }
+      ]
+    },
+    {
+      title: "GMTRouter: Personalized LLM Router over Multi-turn User Interactions",
+      authors: ["Enze Xie", "Yihang Sun", "Tao Feng", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Router", "Personalization", "LLM Router"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2511.08590" }
+      ]
+    },
+    {
+      title: "PREMIUM: LLM Personalization with Individual-level Preference Feedback",
+      authors: ["Yihang Sun", "Tao Feng", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Personalization", "LLM"],
+      links: []
+    },
+    {
+      title: "UniRec: Unified Multimodal Encoding for LLM-Based Recommendations",
+      authors: ["Zijie Lei", "Tao Feng", "Zhigang Hua", "Yan Xie", "Guanyu Lin", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2026",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Recsys", "LLM", "Multimodal"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2601.19423" }
+      ]
+    },
+    {
+      title: "Causally-Informed Unified Semantic and ID Representation Learning",
+      authors: ["Guanyu Lin", "Tao Feng", "Jiaxuan You"],
+      venue: "IJCAI 2025 Workshop on Causal Learning for Recommendation Systems",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Recsys", "Causal"],
+      links: []
+    },
+    {
+      title: "Unified Semantic and ID Representation Learning for Deep Recommenders",
+      authors: ["Guanyu Lin", "Zhigang Hua", "Tao Feng", "Shuang Yang", "Bo Long", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic LLM Routing & Orchestration",
+      tags: ["Recsys", "LLM"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2502.16474" }
+      ]
+    },
 
-              function causal1_stop() {
-                document.getElementById('causal1_image').style.opacity = "0";
-              }
-              causal1_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/pdf/2503.06395">
-              <papertitle>Causal Discovery and Inference towards Urban Elements and Associated Factors</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li
-            <br>
-            <em>arxiv</em>, 2025
-            <br>
-            <p>
-              We propose a novel urban causal computing framework that uses reinforcement learning to discover causal relationships among urban factors and reduce confounding effects, thereby improving urban mobility prediction.
-            </p>
-          </div>
-        </div>
+    // ---- Agentic Memory ----
+    {
+      title: "Rethinking Memory Mechanisms of Foundation Agents in the Second Half",
+      authors: ["Wei-Cheng Huang", "Wei Zhang", "Yifan Liang", "Yijun Bei", "Yuxiang Chen", "Tao Feng", "Xinpeng Pan", "Zhitao Tan", "et al."],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      extraCategories: ["Surveys"],
+      tags: ["Memory", "Agent", "Survey"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2602.06052" }
+      ]
+    },
+    {
+      title: "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
+      authors: ["Haozhen Zhang", "Qihang Long", "Jiantao Bao", "Tao Feng", "Wei Zhang", "Hao Yue", "Wei Wang"],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      extraCategories: ["Agentic RL"],
+      tags: ["Memory", "Agent", "Self Evolve"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2602.02474" }
+      ]
+    },
+    {
+      title: "MemReward: Graph-Based Experience Memory for LLM Reward Prediction with Limited Labels",
+      authors: ["Tian Luo", "Tao Feng", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      tags: ["Memory", "Graph", "LLM with RL"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2603.19310" }
+      ]
+    },
+    {
+      title: "Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory",
+      authors: ["Haozhen Zhang", "Hao Yue", "Tao Feng", "Qihang Long", "Jiantao Bao", "Bo Jin", "Wei Zhang", "Xiangrong Li", "Jiaxuan You", "et al."],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      extraCategories: ["Agentic RL"],
+      tags: ["Memory", "Agent", "Router"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2602.06025" }
+      ]
+    },
 
-        <!-- Causal Discovery 论文2 -->
-        <div class="pub-row" onmouseout="causal2_stop()" onmouseover="causal2_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='causal2_image'>
-                <img src='images/OD1.jpg' width="150">
-              </div>
-              <img src='images/OD2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function causal2_start() {
-                document.getElementById('causal2_image').style.opacity = "1";
-              }
+    // ---- Agentic Graph Intelligence ----
+    {
+      title: "Graph World Model",
+      authors: ["Tao Feng", "Yexin Wu", "Guanyu Lin", "Jiaxuan You"],
+      venue: "ICML, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "LLM", "Agent", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2507.10539" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/GWM" }
+      ]
+    },
+    {
+      title: "Researchtown: Simulator of Human Research Community",
+      authors: ["Haofei Yu", "Zhaochen Hong", "Zirui Cheng", "Kunlun Zhu", "Keyang Xuan", "Jinwei Yao", "Tao Feng", "Jiaxuan You"],
+      venue: "ICML, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "Agent", "Social Agent", "Simulation", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2412.17767" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/research-town" }
+      ]
+    },
+    {
+      title: "Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs",
+      authors: ["Haozhen Zhang", "Tao Feng", "Jiaxuan You"],
+      venue: "ACL, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "RAG", "LLM", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2410.11001" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/GoR" }
+      ]
+    },
+    {
+      title: "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
+      authors: ["Tao Feng*", "Yihang Sun*", "Jiaxuan You"],
+      venue: "ICLR, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "Evaluation", "LLM", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://openreview.net/forum?id=5RUM1aIdok" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/GraphEval" }
+      ]
+    },
+    {
+      title: "Thought-Retriever: Don't Just Retrieve Raw Data, Retrieve Thoughts",
+      authors: ["Tao Feng*", "Pengrui Han*", "Guanyu Lin*", "Ge Liu", "Jiaxuan You"],
+      venue: "ICLR Workshop on How Far Are We From AGI, 2024",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "RAG", "LLM"],
+      links: [
+        { name: "Paper", url: "https://openreview.net/pdf?id=sOSAu0XQcI" }
+      ]
+    },
+    {
+      title: "Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance",
+      authors: ["Guanyu Lin*", "Tao Feng*", "Pengrui Han*", "Ge Liu", "Jiaxuan You"],
+      venue: "EMNLP (System Demo), 2024",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "Agent", "Demo", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2409.04593" },
+        { name: "Demo", url: "https://huggingface.co/spaces/ulab-ai/ArxivCopilot" }
+      ]
+    },
+    {
+      title: "AcademicEval: Live Long-Context LLM Benchmark",
+      authors: ["Haozhen Zhang", "Tao Feng", "Pengrui Han", "Jiaxuan You"],
+      venue: "TMLR, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Evaluation", "LLM", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2510.17725" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/AcademicEval" }
+      ]
+    },
+    {
+      title: "Probing the Knowledge Boundary: An Interactive Agentic Framework for Deep Knowledge Extraction",
+      authors: ["Yifan Yang", "Shuo Zhu", "Tao Feng", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2026",
+      category: "Agentic Graph Intelligence",
+      tags: ["Agent", "LLM", "Evaluation"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2602.00959" }
+      ]
+    },
+    {
+      title: "ResearchArcade: Graph Interface for Academic Tasks",
+      authors: ["Jiaxin Xu", "Chao Lin", "Haofei Yu", "Tao Feng", "Jiaxuan You"],
+      venue: "Arxiv, 2025",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph", "Agent", "Demo"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2511.22036" }
+      ]
+    },
+    {
+      title: "RDBench: ML Benchmark for Relational Databases",
+      authors: ["Zizhao Zhang", "Yi Yang", "Lutong Zou", "He Wen", "Tao Feng", "Jiaxuan You"],
+      venue: "Arxiv, 2023",
+      category: "Agentic Graph Intelligence",
+      tags: ["Graph for DB", "Evaluation"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2310.16837" }
+      ]
+    },
 
-              function causal2_stop() {
-                document.getElementById('causal2_image').style.opacity = "0";
-              }
-              causal2_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/abs/2503.06398">
-              <papertitle>Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li
-            <br>
-            <em>arxiv</em>, 2025
-            <br>
-            <p>
-              We propose CE-OFP, which is a unified framework that transfers urban knowledge from data-rich cities to data-scarce ones by leveraging reinforcement learning for causal discovery, variational auto-encoders for feature reconstruction, and graph attention networks for knowledge distillation, resulting in up to an 11% reduction in OD flow prediction RMSE.
-            </p>
-          </div>
-        </div>
+    // ---- Agentic RL ----
+    {
+      title: "ILRoute: A Graph-based Imitation Learning Method to Unveil Riders' Routing Strategies in Food Delivery Service",
+      authors: ["Tao Feng", "Huan Yan", "Huandong Wang", "Wenzhen Huang", "Yuyang Han", "Hongsen Liao", "Jinghua Hao", "Yong Li"],
+      venue: "KDD, 2023",
+      category: "Agentic RL",
+      tags: ["Agent", "RL", "Graph", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599844" }
+      ]
+    },
+    {
+      title: "Precise Mobility Intervention for Epidemic Control Using Unobservable Information via Deep Reinforcement Learning",
+      authors: ["Tao Feng", "Tong Xia", "Xiaochen Fan", "Huandong Wang", "Zefang Zong", "Yong Li"],
+      venue: "KDD, 2022",
+      category: "Agentic RL",
+      tags: ["RL", "Agent", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3534678.3539195" }
+      ]
+    },
+    {
+      title: "GAT-MF: Graph Attention Mean Field for Very Large Scale Multi-Agent Reinforcement Learning",
+      authors: ["Qianyue Hao", "Wenzhen Huang", "Tao Feng", "Jian Yuan", "Yong Li"],
+      venue: "KDD, 2023",
+      category: "Agentic RL",
+      tags: ["RL", "Agent", "Graph", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599359" },
+        { name: "Code", url: "https://github.com/tsinghua-fib-lab/Large-Scale-MARL-GATMF" }
+      ]
+    },
+    {
+      title: "Contact Tracing and Epidemic Intervention via Deep Reinforcement Learning",
+      authors: ["Tao Feng", "Sirui Song", "Tong Xia", "Yong Li"],
+      venue: "ACM TKDD, 2023",
+      category: "Agentic RL",
+      tags: ["RL", "Agent", "Peer Reviewed"],
+      links: []
+    },
+    {
+      title: "EPR-GAIL: An EPR-Enhanced Hierarchical Imitation Learning Framework to Simulate Complex User Consumption Behaviors",
+      authors: ["Tao Feng", "Yunke Zhang", "Huandong Wang", "Yong Li"],
+      venue: "Arxiv, 2025",
+      category: "Agentic RL",
+      tags: ["RL", "Agent", "Simulation"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2503.06392" }
+      ]
+    },
+    {
+      title: "Reviving the Economy While Saving Lives: A Deep Reinforcement Learning Approach for Smart POI Reopening",
+      authors: ["Tao Feng", "Huandong Wang", "Xiaochen Fan", "Tong Xia", "Yong Li"],
+      venue: "SIGSPATIAL, 2022",
+      category: "Agentic RL",
+      tags: ["RL", "Agent", "Peer Reviewed"],
+      links: []
+    },
+    {
+      title: "A Multi-scale Ensemble Learning Model for Cellular Traffic Prediction",
+      authors: ["Chengfeng Gao", "Tao Feng", "Huandong Wang", "Depeng Jin", "Jie Feng", "Xianghui Wang", "Liping Zhu", "Chao Deng"],
+      venue: "IEEE GLOBECOM, 2022",
+      category: "Agentic RL",
+      tags: ["Temporal", "Peer Reviewed"],
+      links: []
+    },
 
-        <!-- AI for Science -->
-        <h2 class="topic-title">AI for Science</h2>
-        
-        <!-- Protein Complexes 论文 -->
-        <div class="pub-row" onmouseout="protein_stop()" onmouseover="protein_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='protein_image'>
-                <img src='images/GAPN1.jpg' width="150">
-              </div>
-              <img src='images/GAPN2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function protein_start() {
-                document.getElementById('protein_image').style.opacity = "1";
-              }
+    // ---- Agentic AI for Science ----
+    {
+      title: "Deep Reinforcement Learning for Modelling Protein Complexes",
+      authors: ["Tao Feng", "Ziqi Gao", "Jiaxuan You", "Chenyi Zi", "Yan Zhou", "Chen Zhang", "Jia Li"],
+      venue: "ICLR, 2024",
+      category: "Agentic AI for Science",
+      tags: ["AI for Science", "RL", "Graph", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2405.02299" }
+      ]
+    },
+    {
+      title: "Molecular De Novo Design through Transformer-based Reinforcement Learning",
+      authors: ["Tao Feng", "Pengcheng Xu", "Tianfan Fu", "Jimeng Sun"],
+      venue: "Arxiv, 2024",
+      category: "Agentic AI for Science",
+      tags: ["AI for Science", "RL", "LLM"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2310.05365" }
+      ]
+    },
 
-              function protein_stop() {
-                document.getElementById('protein_image').style.opacity = "0";
-              }
-              protein_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/abs/2405.02299">
-              <papertitle>Deep Reinforcement Learning for Modelling Protein Complexes</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Ziqi Gao, Jiaxuan You, Chenyi Zi, Yan Zhou, Chen Zhang, Jia Li
-            <br>
-            <em>ICLR</em>, 2024
-            <br>
-            <p>
-              We propose GAPN, a generative adversarial policy network that efficiently models multi-chain protein complexes by formulating the assembly as a graph search and leveraging policy gradient with adversarial rewards to achieve significant accuracy and efficiency improvements.
-            </p>
-          </div>
-        </div>
+    // ---- Causal Discovery ----
+    {
+      title: "Causal Discovery and Inference towards Urban Elements and Associated Factors",
+      authors: ["Tao Feng", "Yunke Zhang", "Xiaochen Fan", "Huandong Wang", "Yong Li"],
+      venue: "Arxiv, 2025",
+      category: "Causal Discovery and Inference",
+      tags: ["Causal", "RL"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/pdf/2503.06395" }
+      ]
+    },
+    {
+      title: "Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities",
+      authors: ["Tao Feng", "Yunke Zhang", "Xiaochen Fan", "Huandong Wang", "Yong Li"],
+      venue: "Arxiv, 2025",
+      category: "Causal Discovery and Inference",
+      tags: ["Causal", "RL", "Graph"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2503.06398" }
+      ]
+    },
 
-        <!-- Molecular Design 论文 -->
-        <div class="pub-row" onmouseout="molecular_stop()" onmouseover="molecular_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='molecular_image'>
-                <img src='images/molecular1.jpg' width="150">
-              </div>
-              <img src='images/molecular2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function molecular_start() {
-                document.getElementById('molecular_image').style.opacity = "1";
-              }
+    // ---- Surveys ----
+    {
+      title: "How Far Are We From AGI: Are LLMs All We Need?",
+      authors: ["Tao Feng*", "Chuanyang Jin*", "Jingyu Liu*", "Kunlun Zhu*", "Haoqin Tu", "Zirui Cheng", "Guanyu Lin", "Jiaxuan You"],
+      venue: "TMLR, 2024",
+      category: "Surveys",
+      tags: ["Survey", "LLM", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://openreview.net/forum?id=H2ZKqfNd0U" }
+      ]
+    },
+    {
+      title: "Deep Reinforcement Learning for Demand Driven Services in Logistics and Transportation Systems: A Survey",
+      authors: ["Zefang Zong", "Tao Feng", "Jingwei Wang", "Tong Xia", "Yong Li"],
+      venue: "ACM TKDD, 2024",
+      category: "Surveys",
+      tags: ["Survey", "RL", "Peer Reviewed"],
+      links: [
+        { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3708325" }
+      ]
+    }
+  ];
 
-              function molecular_stop() {
-                document.getElementById('molecular_image').style.opacity = "0";
-              }
-              molecular_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://arxiv.org/abs/2310.05365">
-              <papertitle>Molecular De Novo Design through Transformer-based Reinforcement Learning</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng</strong>, Pengcheng Xu, Tianfan Fu, Jimeng Sun
-            <br>
-            <em>arxiv</em>, 2024
-            <br>
-            <p>
-              We introduce a Transformer-based generative model for molecular de novo design that outperforms traditional RNN methods by effectively capturing long-term dependencies to generate active compounds with desired properties.
-            </p>
-          </div>
-        </div>
+  // SVG icons
+  const ICONS = {
+    paper: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+    code: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+    demo: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+  };
 
-        <!-- Surveys -->
-        <h2 class="topic-title">Surveys</h2>
-        
-        <!-- AGI Survey 论文 -->
-        <div class="pub-row" onmouseout="agi_stop()" onmouseover="agi_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='agi_image'>
-                <img src='images/AGI1.jpg' width="150">
-              </div>
-              <img src='images/AGI2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function agi_start() {
-                document.getElementById('agi_image').style.opacity = "1";
-              }
+  function getIcon(name) {
+    const n = name.toLowerCase();
+    if (n === 'code') return ICONS.code;
+    if (n === 'demo') return ICONS.demo;
+    return ICONS.paper;
+  }
 
-              function agi_stop() {
-                document.getElementById('agi_image').style.opacity = "0";
-              }
-              agi_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://openreview.net/forum?id=H2ZKqfNd0U">
-              <papertitle>How Far Are We From AGI: Are LLMs All We Need?</papertitle>
-            </a>
-            <br>
-            <strong>Tao Feng*</strong>, Chuanyang Jin*, Jingyu Liu*, Kunlun Zhu*, Haoqin Tu, Zirui Cheng, Guanyu Lin, Jiaxuan You
-            <br>
-            <em>TMLR</em>, 2024
-            <br>
-            <p>
-              We provide a comprehensive exploration of AGI by defining its required capabilities, discussing alignment challenges, and outlining a strategic roadmap for responsible and impactful development across various domains.
-            </p>
-          </div>
-        </div>
+  // Render
+  let activeTag = 'All';
+  let searchTerm = '';
 
-        <!-- DRL Survey 论文 -->
-        <div class="pub-row" onmouseout="drl_survey_stop()" onmouseover="drl_survey_start()">
-          <div class="pub-img">
-            <div class="one">
-              <div class="two" id='drl_survey_image'>
-                <img src='images/DRL1.jpg' width="150">
-              </div>
-              <img src='images/DRL2.jpg' width="150">
-            </div>
-            <script type="text/javascript">
-              function drl_survey_start() {
-                document.getElementById('drl_survey_image').style.opacity = "1";
-              }
+  function renderCard(pub) {
+    const authorsHtml = pub.authors.map(a =>
+      a.toLowerCase().includes('tao feng') ? `<strong>${a}</strong>` : a
+    ).join(', ');
 
-              function drl_survey_stop() {
-                document.getElementById('drl_survey_image').style.opacity = "0";
-              }
-              drl_survey_stop()
-            </script>
-          </div>
-          <div class="pub-content">
-            <a target="_blank" href="https://dl.acm.org/doi/10.1145/3708325">
-              <papertitle>Deep Reinforcement Learning for Demand Driven Services in Logistics and Transportation Systems: A Survey</papertitle>
-            </a>
-            <br>
-            Zefang Zong, <strong>Tao Feng</strong>, Jingwei Wang, Tong Xia, Yong Li
-            <br>
-            <em>TKDD</em>, 2024
-            <br>
-            <p>
-              We review the challenges and deep reinforcement learning solutions for optimizing dispatching and routing in urban demand-driven services.
-            </p>
-          </div>
-        </div>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <a target="_blank" href="https://jonbarron.info/" style="text-align:right;font-size:small;">Site source</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+    const linksHtml = pub.links.map(l =>
+      `<a href="${l.url}" target="_blank" rel="noopener">${getIcon(l.name)} ${l.name}</a>`
+    ).join('');
+
+    return `<div class="pub-card">
+      <div style="flex:1">
+        <div class="pub-card-title">${pub.links.length > 0
+          ? `<a href="${pub.links[0].url}" target="_blank" rel="noopener">${pub.title}</a>`
+          : pub.title}</div>
+        <div class="pub-card-authors">${authorsHtml}</div>
+        <div class="pub-card-venue">${pub.venue}</div>
+      </div>
+      <div class="pub-card-footer">
+        ${linksHtml ? `<div class="pub-card-links">${linksHtml}</div>` : ''}
+        <div class="pub-card-tags"><button class="inline-tag" onclick="setTag('${pub.category}')">${pub.category}</button></div>
+      </div>
+    </div>`;
+  }
+
+  function render() {
+    const grid = document.getElementById('pub-grid');
+    const term = searchTerm.toLowerCase().trim();
+
+    const filtered = PUBS.filter(pub => {
+      const allCats = [pub.category, ...(pub.extraCategories || [])];
+      const matchTag = activeTag === 'All' || allCats.includes(activeTag);
+      const matchSearch = term === '' ||
+        pub.title.toLowerCase().includes(term) ||
+        pub.category.toLowerCase().includes(term) ||
+        pub.authors.some(a => a.toLowerCase().includes(term));
+      return matchTag && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="no-results"><p>No publications found.</p><button onclick="clearFilters()">Clear Search & Filters</button></div>';
+      return;
+    }
+
+    // Default "All" view: group by category with section headers
+    if (activeTag === 'All' && term === '') {
+      let html = '';
+      CATEGORIES.forEach(cat => {
+        const catPubs = filtered.filter(p => p.category === cat || (p.extraCategories || []).includes(cat));
+        if (catPubs.length === 0) return;
+        html += `<div class="category-header">${cat} <span class="category-count">(${catPubs.length})</span></div>`;
+        html += catPubs.map(renderCard).join('');
+      });
+      grid.innerHTML = html;
+    } else {
+      // Filtered view: flat grid
+      grid.innerHTML = filtered.map(renderCard).join('');
+    }
+  }
+
+  function renderTags() {
+    const container = document.getElementById('filter-tags');
+    container.innerHTML = `<button class="filter-btn ${activeTag === 'All' ? 'active' : ''}" onclick="setTag('All')">All</button>` +
+      CATEGORIES.map(cat => {
+        const count = PUBS.filter(p => p.category === cat).length;
+        return `<button class="filter-btn ${activeTag === cat ? 'active' : ''}" onclick="setTag('${cat}')">${cat}</button>`;
+      }).join('');
+  }
+
+  function setTag(tag) {
+    activeTag = tag;
+    renderTags();
+    render();
+    document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function clearFilters() {
+    activeTag = 'All';
+    searchTerm = '';
+    document.getElementById('pub-search').value = '';
+    renderTags();
+    render();
+  }
+
+  document.getElementById('pub-search').addEventListener('input', function(e) {
+    searchTerm = e.target.value;
+    render();
+  });
+
+  // Init
+  renderTags();
+  render();
+  </script>
 </body>
 </html>
