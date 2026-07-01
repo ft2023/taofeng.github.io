@@ -173,6 +173,50 @@
       padding: 40px 0 60px;
     }
 
+    /* View Mode Toggle */
+    .view-mode-row {
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #64748b;
+    }
+    .view-mode-link {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .view-mode-link:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    .view-mode-link.active {
+      color: #1d4ed8;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .view-mode-sep {
+      margin: 0 8px;
+      color: #cbd5e1;
+    }
+
+    /* Year Section Headers */
+    .year-header {
+      grid-column: 1 / -1;
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #3b82f6;
+    }
+    .year-header:first-child {
+      margin-top: 0;
+    }
+
     /* Search Bar */
     .search-wrapper {
       position: relative;
@@ -473,6 +517,7 @@
   <div class="pub-section" id="publications">
     <div class="container">
       <h2 class="section-title">Publications</h2>
+      <div class="view-mode-row" id="view-mode-row"></div>
 
       <!-- Search -->
       <div class="search-wrapper">
@@ -677,6 +722,18 @@
       links: [
         { name: "Paper", url: "https://arxiv.org/abs/2602.02474" },
         { name: "Code", url: "https://github.com/ViktorAxelsen/MemSkill" }
+      ]
+    },
+    {
+      title: "ElasticMem: Latent Memory as a Learnable Resource for LLM Agents",
+      authors: ["Tao Feng", "Chongrui Ye", "Tianyang Luo", "Jingjun Xu", "Xueqiang Xu", "Haozhen Zhang", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      extraCategories: ["Agentic RL"],
+      tags: ["Memory", "Agent", "LLM with RL"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2605.30690" },
+        { name: "Code", url: "https://github.com/ulab-uiuc/ElasticMem" }
       ]
     },
     {
@@ -976,9 +1033,20 @@
     return ICONS.paper;
   }
 
+  function getYear(pub) {
+    const m = pub.venue.match(/\d{4}/);
+    return m ? parseInt(m[0], 10) : 0;
+  }
+
+  function isSelected(pub) {
+    const cats = [pub.category, ...(pub.extraCategories || [])];
+    return cats.includes('Agentic RL');
+  }
+
   // Render
   let activeTag = 'All';
   let searchTerm = '';
+  let viewMode = 'selected'; // 'selected' | 'date' | 'topic'
 
   function renderCard(pub) {
     const authorsHtml = pub.authors.map(a =>
@@ -1008,7 +1076,7 @@
     const grid = document.getElementById('pub-grid');
     const term = searchTerm.toLowerCase().trim();
 
-    const filtered = PUBS.filter(pub => {
+    let filtered = PUBS.filter(pub => {
       const allCats = [pub.category, ...(pub.extraCategories || [])];
       const matchTag = activeTag === 'All' || allCats.includes(activeTag);
       const matchSearch = term === '' ||
@@ -1018,13 +1086,35 @@
       return matchTag && matchSearch;
     });
 
+    if (viewMode === 'selected') {
+      filtered = filtered.filter(isSelected);
+    }
+
     if (filtered.length === 0) {
       grid.innerHTML = '<div class="no-results"><p>No publications found.</p><button onclick="clearFilters()">Clear Search & Filters</button></div>';
       return;
     }
 
-    // Default "All" view: group by category with section headers
-    if (activeTag === 'All' && term === '') {
+    if (viewMode === 'selected') {
+      // Curated subset, sorted by year descending, flat list
+      const sorted = filtered.slice().sort((a, b) => getYear(b) - getYear(a));
+      grid.innerHTML = sorted.map(renderCard).join('');
+    } else if (viewMode === 'date') {
+      // All publications grouped under year headers, sorted by year descending
+      const sorted = filtered.slice().sort((a, b) => getYear(b) - getYear(a));
+      let html = '';
+      let lastYear = null;
+      sorted.forEach(pub => {
+        const year = getYear(pub);
+        if (year !== lastYear) {
+          html += `<div class="year-header">${year}</div>`;
+          lastYear = year;
+        }
+        html += renderCard(pub);
+      });
+      grid.innerHTML = html;
+    } else if (activeTag === 'All' && term === '') {
+      // "By topic" default: group by category with section headers
       let html = '';
       CATEGORIES.forEach(cat => {
         const catPubs = filtered.filter(p => p.category === cat || (p.extraCategories || []).includes(cat));
@@ -1037,6 +1127,25 @@
       // Filtered view: flat grid
       grid.innerHTML = filtered.map(renderCard).join('');
     }
+  }
+
+  function renderViewModeRow() {
+    const container = document.getElementById('view-mode-row');
+    const modes = [
+      { key: 'selected', label: 'show selected' },
+      { key: 'date', label: 'show all by date' },
+      { key: 'topic', label: 'show all by topic' }
+    ];
+    container.innerHTML = modes.map((m, i) => {
+      const btn = `<button class="view-mode-link ${viewMode === m.key ? 'active' : ''}" onclick="setViewMode('${m.key}')">${m.label}</button>`;
+      return i === 0 ? btn : `<span class="view-mode-sep">/</span>${btn}`;
+    }).join('');
+  }
+
+  function setViewMode(mode) {
+    viewMode = mode;
+    renderViewModeRow();
+    render();
   }
 
   function renderTags() {
@@ -1069,6 +1178,7 @@
   });
 
   // Init
+  renderViewModeRow();
   renderTags();
   render();
   </script>
