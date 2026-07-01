@@ -725,6 +725,17 @@
       ]
     },
     {
+      title: "ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents",
+      authors: ["Tao Feng", "Chongrui Ye", "Tianyang Luo", "Jingjun Xu", "Xueqiang Xu", "Haozhen Zhang", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
+      venue: "Arxiv, 2026",
+      category: "Agentic Memory",
+      extraCategories: ["Agentic RL"],
+      tags: ["Memory", "Graph", "Agent", "LLM with RL"],
+      links: [
+        { name: "Paper", url: "https://arxiv.org/abs/2605.30712" }
+      ]
+    },
+    {
       title: "ElasticMem: Latent Memory as a Learnable Resource for LLM Agents",
       authors: ["Tao Feng", "Chongrui Ye", "Tianyang Luo", "Jingjun Xu", "Xueqiang Xu", "Haozhen Zhang", "Ge Liu", "Jiaxuan You"],
       venue: "Arxiv, 2026",
@@ -1038,6 +1049,24 @@
     return m ? parseInt(m[0], 10) : 0;
   }
 
+  function getMonth(pub) {
+    // Refine same-year ordering using the arXiv ID's YYMM prefix, when present
+    const paperUrl = (pub.links.find(l => l.name === 'Paper') || {}).url || '';
+    const m = paperUrl.match(/(\d{2})(\d{2})\.\d{4,5}/);
+    if (m) {
+      const yy = 2000 + parseInt(m[1], 10);
+      const mm = parseInt(m[2], 10);
+      if (yy === getYear(pub)) return mm;
+    }
+    return 0;
+  }
+
+  function compareByDate(a, b) {
+    const yearDiff = getYear(b) - getYear(a);
+    if (yearDiff !== 0) return yearDiff;
+    return getMonth(b) - getMonth(a);
+  }
+
   function isSelected(pub) {
     const cats = [pub.category, ...(pub.extraCategories || [])];
     return cats.includes('Agentic RL');
@@ -1096,12 +1125,12 @@
     }
 
     if (viewMode === 'selected') {
-      // Curated subset, sorted by year descending, flat list
-      const sorted = filtered.slice().sort((a, b) => getYear(b) - getYear(a));
+      // Curated subset, sorted chronologically (newest first), flat list
+      const sorted = filtered.slice().sort(compareByDate);
       grid.innerHTML = sorted.map(renderCard).join('');
     } else if (viewMode === 'date') {
-      // All publications grouped under year headers, sorted by year descending
-      const sorted = filtered.slice().sort((a, b) => getYear(b) - getYear(a));
+      // All publications grouped under year headers, sorted chronologically
+      const sorted = filtered.slice().sort(compareByDate);
       let html = '';
       let lastYear = null;
       sorted.forEach(pub => {
@@ -1114,18 +1143,19 @@
       });
       grid.innerHTML = html;
     } else if (activeTag === 'All' && term === '') {
-      // "By topic" default: group by category with section headers
+      // "By topic" default: group by category with section headers, chronological within each
       let html = '';
       CATEGORIES.forEach(cat => {
-        const catPubs = filtered.filter(p => p.category === cat || (p.extraCategories || []).includes(cat));
+        const catPubs = filtered.filter(p => p.category === cat || (p.extraCategories || []).includes(cat))
+          .slice().sort(compareByDate);
         if (catPubs.length === 0) return;
         html += `<div class="category-header">${cat} <span class="category-count">(${catPubs.length})</span></div>`;
         html += catPubs.map(renderCard).join('');
       });
       grid.innerHTML = html;
     } else {
-      // Filtered view: flat grid
-      grid.innerHTML = filtered.map(renderCard).join('');
+      // Filtered view: flat grid, chronological
+      grid.innerHTML = filtered.slice().sort(compareByDate).map(renderCard).join('');
     }
   }
 
