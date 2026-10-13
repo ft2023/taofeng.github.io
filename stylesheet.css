@@ -1,7 +1,7 @@
 /* Palette and academic layout adapted from Cheng Qian's homepage. */
 :root { --background-color:#fefbf5; --main-color:#394661; --link-color:#427e3e; --link-color-hover:#292c1f; --secondary-color:#845836; }
 * { box-sizing:border-box; }
-body { margin:0; background:var(--background-color); color:#333; font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+body { margin:0; background:#fff; color:#212529; font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
 a { color:var(--link-color); text-decoration:none; }
 a:hover { color:var(--link-color-hover); text-decoration:underline; }
 button,input { font:inherit; }
@@ -11,7 +11,7 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:2px solid var
 .skip-link { position:absolute; top:-100px; left:16px; z-index:10; padding:10px; background:white; }
 .skip-link:focus { top:8px; }
 .main-content { width:66%; min-width:668px; max-width:1080px; margin:auto; }
-#main { padding:45px 30px 15px; margin-bottom:30px; }
+#main { padding:45px 30px 15px; margin-bottom:30px; background:var(--background-color); }
 #main-content-container { background:#fff; border-radius:12px; padding:30px 32px 22px; box-shadow:0 2px 8px rgb(0 0 0 / 5%); }
 .profile-row { display:grid; grid-template-columns:220px minmax(0,1fr); gap:25px; align-items:center; }
 .col-avatar { text-align:center; }
@@ -67,7 +67,7 @@ section { margin-bottom:32px; }
 }
 @media (max-width:767px) {
  .main-content { width:100%; min-width:0; }
- #main { padding:24px 18px 0; margin-bottom:26px; }
+ #main { padding:24px 18px 18px; margin-bottom:26px; }
  #main-content-container { padding:25px 22px 20px; }
  .profile-row { display:flex; flex-direction:column; gap:22px; }
  .name,.email { text-align:center; }
