@@ -1,6 +1,5 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B5LHBSZYY"></script>
@@ -16,1224 +15,196 @@
   <meta name="author" content="Tao Feng">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="logo" sizes="180x180" href="images/logo.jpg">
+
   <link rel="apple-touch-icon" sizes="180x180" href="images/logo.jpg">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.jpg">
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="images/logo.jpg">
+  <link rel="icon" type="image/jpeg" sizes="16x16" href="images/logo.jpg">
   <link rel="manifest" href="images/site.webmanifest">
 
   <meta name="google-site-verification" content="SppVkSFcpllgYfMj_yChDn5QreKfTWW1_cEwRTvVBMY" />
 
-  <style>
-    /* ---- Reset & Base ---- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: #1e293b;
-      background: #f8fafc;
-      line-height: 1.6;
-    }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ---- Layout ---- */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ---- Header / Bio ---- */
-    .header-section {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 40px 0;
-    }
-    .bio-row {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-    .bio-text { flex: 1; }
-    .bio-text h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      color: #0f172a;
-    }
-    .bio-text p {
-      font-size: 16px;
-      color: #334155;
-      margin-bottom: 12px;
-      line-height: 1.7;
-    }
-    .bio-text p strong {
-      color: #0f172a;
-    }
-    .bio-thrusts {
-      list-style: none;
-      padding: 0;
-      margin: 14px 0;
-    }
-    .bio-thrusts li {
-      font-size: 15.5px;
-      color: #334155;
-      padding: 6px 0 6px 22px;
-      position: relative;
-      line-height: 1.6;
-    }
-    .bio-thrusts li::before {
-      content: "▸";
-      position: absolute;
-      left: 4px;
-      color: #2563eb;
-      font-weight: 700;
-    }
-    .bio-thrusts li strong {
-      color: #0f172a;
-      font-weight: 700;
-    }
-    .bio-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .bio-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: #2563eb;
-    }
-    .bio-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #e2e8f0;
-      flex-shrink: 0;
-    }
-
-    /* ---- News ---- */
-    .news-section {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 30px 0;
-    }
-    .section-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #2563eb;
-      display: inline-block;
-    }
-    .news-list {
-      font-size: 15px;
-      color: #334155;
-      line-height: 1.8;
-      border-left: 4px solid #f59e0b;
-      background: #fffbeb;
-      border-radius: 8px;
-      padding: 20px 24px;
-      max-height: 280px;
-      overflow-y: auto;
-    }
-    .news-list::-webkit-scrollbar {
-      width: 6px;
-    }
-    .news-list::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .news-list::-webkit-scrollbar-thumb {
-      background: #d4a054;
-      border-radius: 3px;
-    }
-    .news-list::-webkit-scrollbar-thumb:hover {
-      background: #b8860b;
-    }
-    .news-item {
-      margin-bottom: 16px;
-    }
-    .news-item:last-child {
-      margin-bottom: 0;
-    }
-    .news-date {
-      font-weight: 700;
-      color: #1e293b;
-    }
-    .news-item a {
-      color: #2563eb;
-      font-weight: 600;
-    }
-    .news-list b { color: #1e293b; }
-
-    /* ---- Publications Section ---- */
-    .pub-section {
-      padding: 40px 0 60px;
-    }
-
-    /* View Mode Toggle */
-    .view-mode-row {
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: #64748b;
-    }
-    .view-mode-link {
-      background: none;
-      border: none;
-      padding: 0;
-      color: #64748b;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .view-mode-link:hover {
-      color: #2563eb;
-      text-decoration: underline;
-    }
-    .view-mode-link.active {
-      color: #1d4ed8;
-      font-weight: 700;
-      text-decoration: underline;
-    }
-    .view-mode-sep {
-      margin: 0 8px;
-      color: #cbd5e1;
-    }
-
-    /* Year Section Headers */
-    .year-header {
-      grid-column: 1 / -1;
-      font-size: 22px;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 20px;
-      margin-bottom: 4px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #3b82f6;
-    }
-    .year-header:first-child {
-      margin-top: 0;
-    }
-
-    /* Search Bar */
-    .search-wrapper {
-      position: relative;
-      max-width: 500px;
-      margin-bottom: 20px;
-    }
-    .search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #94a3b8;
-    }
-    #pub-search {
-      width: 100%;
-      padding: 10px 16px 10px 40px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 14px;
-      background: #ffffff;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    #pub-search:focus {
-      outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
-    }
-
-    /* Filter Tags */
-    .filter-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 28px;
-    }
-    .filter-btn {
-      background: #f1f5f9;
-      color: #475569;
-      border: none;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-    .filter-btn:hover {
-      background: #e2e8f0;
-    }
-    .filter-btn.active {
-      background: #1d4ed8;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    /* Publication Grid */
-    .pub-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    @media (max-width: 1024px) {
-      .pub-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .pub-grid { grid-template-columns: 1fr; }
-      .bio-row { flex-direction: column-reverse; text-align: center; }
-      .bio-links { justify-content: center; }
-    }
-
-    /* Category Section Headers */
-    .category-header {
-      grid-column: 1 / -1;
-      font-size: 22px;
-      font-weight: 700;
-      color: #0f172a;
-      margin-top: 20px;
-      margin-bottom: 4px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #3b82f6;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .category-header:first-child {
-      margin-top: 0;
-    }
-    .category-count {
-      font-size: 13px;
-      font-weight: 500;
-      color: #94a3b8;
-    }
-
-    /* Publication Card */
-    .pub-card {
-      background: #ffffff;
-      padding: 24px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-      animation: fadeIn 0.3s ease;
-    }
-    .pub-card:hover {
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      border-color: #bfdbfe;
-      transform: translateY(-2px);
-    }
-    .pub-card-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: #1e40af;
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .pub-card-title a {
-      color: #1e40af;
-    }
-    .pub-card-title a:hover {
-      color: #1d4ed8;
-      text-decoration: underline;
-    }
-    .pub-card-authors {
-      font-size: 13.5px;
-      color: #64748b;
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-    .pub-card-authors strong {
-      color: #1e293b;
-      font-weight: 600;
-    }
-    .pub-card-venue {
-      font-size: 13.5px;
-      color: #64748b;
-      font-style: italic;
-      margin-bottom: 12px;
-    }
-    .pub-card-footer {
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid #f1f5f9;
-    }
-    .pub-card-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .pub-card-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: #2563eb;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .pub-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .inline-tag {
-      background: #f1f5f9;
-      color: #64748b;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 500;
-      cursor: pointer;
-      border: none;
-      transition: background 0.2s;
-    }
-    .inline-tag:hover {
-      background: #e2e8f0;
-    }
-
-    /* No results */
-    .no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 48px 0;
-      color: #94a3b8;
-      font-size: 16px;
-    }
-    .no-results button {
-      margin-top: 8px;
-      background: none;
-      border: none;
-      color: #2563eb;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .no-results button:hover { text-decoration: underline; }
-
-    /* Footer */
-    .footer {
-      text-align: right;
-      padding: 20px 0;
-      font-size: 12px;
-      color: #94a3b8;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta name="description" content="Tao Feng is a CS PhD student at UIUC researching agentic AI, reinforcement learning, memory, LLM reasoning, routing, and graph intelligence.">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="publications.js" defer></script>
 </head>
-
-<body>
-
-  <!-- ======== Header / Bio ======== -->
-  <div class="header-section">
-    <div class="container">
-      <div class="bio-row">
-        <div class="bio-text">
-          <h1>Tao Feng</h1>
+<body id="top">
+  <a class="skip-link" href="#publications">Skip to publications</a>
+  <header id="main">
+    <div class="main-content" id="main-content-container">
+      <div class="profile-row">
+        <div class="col-avatar"><img class="avatar" src="images/133501742692355_.pic_hd.jpg" alt="Tao Feng" width="200" height="200"></div>
+        <div class="col-name">
+          <h1 class="name">Tao Feng <span class="chinese-name" lang="zh">冯涛</span></h1>
+          <p class="email">Email: <a href="mailto:taofeng2@illinois.edu">taofeng2 [at] illinois [dot] edu</a></p>
           <p>
-            I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research centers on building <strong>agentic AI systems</strong> that can autonomously reason, decide, remember, and collaborate. My mission is to push the frontier of LLM-powered agents through reinforcement learning, memory mechanisms, and graph-based intelligence. To achieve this, my work currently spans the following major research thrusts:
+            I am a PhD student studying CS at <strong>UIUC</strong>, advised by Prof. <a href="https://cs.stanford.edu/people/jiaxuan/">Jiaxuan You</a>. My research centers on building <strong>agentic AI systems</strong> that can autonomously reason, decide, remember, and collaborate. My mission is to push the frontier of LLM-powered agents through reinforcement learning, memory mechanisms, and graph-based intelligence.
           </p>
-          <ul class="bio-thrusts">
+        </div>
+      </div>
+      <nav class="social-links" aria-label="Profile links"><a href="mailto:taofeng2@illinois.edu">Email</a><span aria-hidden="true">/</span><a href="https://scholar.google.com/citations?user=3xK6SlIAAAAJ&amp;hl=en&amp;authuser=1" target="_blank" rel="noopener">Google Scholar</a><span aria-hidden="true">/</span><a href="https://github.com/ft2023" target="_blank" rel="noopener">GitHub</a></nav>
+    </div>
+  </header>
+  <main class="main-content content-container">
+    <section class="main-news-container" aria-labelledby="news-heading"><h2 class="subtitle" id="news-heading">News &amp; Updates</h2>
+      <ul class="news-list"><li><span class="news-date">[2026.07.01]</span> &#x1F389; <a href="https://arxiv.org/pdf/2507.10540" target="_blank" rel="noopener">FusionFactory</a> was accepted at <strong>TMLR 2026</strong>! A framework for fusing LLM capabilities with multi-LLM log data.</li><li><span class="news-date">[2026.06.30]</span> &#x1F389; <a href="https://arxiv.org/abs/2602.06052" target="_blank" rel="noopener">Rethinking Memory Mechanisms of Foundation Agents in the Second Half</a> was accepted at <strong>TMLR 2026</strong>! A survey unifying foundation agent memory along substrate, cognitive mechanism, and subject dimensions.</li><li><span class="news-date">[2026.04.30]</span> &#x1F389; Three papers accepted at <strong>ICML 2026</strong>: <a href="https://arxiv.org/abs/2606.01041" target="_blank" rel="noopener">ExpWeaver</a>, <a href="https://arxiv.org/abs/2602.00959" target="_blank" rel="noopener">Probing the Knowledge Boundary</a>, and <a href="https://arxiv.org/abs/2602.06025" target="_blank" rel="noopener">BudgetMem</a>.</li><li><span class="news-date">[2026.04]</span> &#x1F389; <a href="https://arxiv.org/abs/2601.19423" target="_blank" rel="noopener">UniRec</a> was accepted at <strong>TMLR 2026</strong>! A unified multimodal encoding framework for LLM-based recommendations that integrates semantic and ID representations across modalities.</li><li><span class="news-date">[2026.04]</span> &#x1F389; <a href="https://openreview.net/forum?id=emCcuhtENL" target="_blank" rel="noopener">Thought-Retriever</a> was accepted at <strong>TMLR 2026</strong>! A model-agnostic algorithm that enables LLMs to effectively utilize external data by retrieving thoughts instead of raw data.</li><li><span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Introducing <a href="https://arxiv.org/abs/2602.06025" target="_blank" rel="noopener">BudgetMem</a>, a runtime agent memory framework for explicit performance-cost control. <strong>BudgetMem</strong> equips each memory module with Low/Mid/High budget tiers and learns query-aware budget-tier routing to deliver controllable on-demand memory extraction.</li><li><span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Released <a href="https://arxiv.org/abs/2602.02474" target="_blank" rel="noopener">MemSkill</a>, a framework for learning and evolving memory skills for LLM agents. <strong>MemSkill</strong> shifts agent memory to span-level, skill-conditioned generation, enabling reusable and self-evolving memory behaviors.</li><li><span class="news-date">[2026.01]</span> &#x1F389; <a href="https://openreview.net/forum?id=GraphPlanner" target="_blank" rel="noopener">GraphPlanner</a> was accepted at <strong>ICLR 2026</strong>! A graph memory-augmented agentic routing framework for multi-agent LLMs.</li><li><span class="news-date">[2025.12]</span> &#x1F680;&#x1F680; Open-sourced <a href="https://github.com/ulab-uiuc/LLMRouter" target="_blank" rel="noopener">LLMRouter</a>, a unified and extensible framework for training, evaluating, and benchmarking single-round, multi-round, agentic, and personalized LLM routers. <strong>LLMRouter</strong> is designed to reduce duplicated engineering effort, enable fair comparison across routing methods, and foster community-driven development. &#x2B50; <strong style="color:#f59e0b;">2,100+ GitHub Stars!</strong> We warmly welcome contributions and integrations from the community!</li><li><span class="news-date">[2025.06]</span> &#x1F389; <a href="https://arxiv.org/pdf/2506.09033" target="_blank" rel="noopener">Router-R1</a> was accepted at <strong>NeurIPS 2025</strong>! Teaching LLMs multi-round routing and aggregation via reinforcement learning.</li><li><span class="news-date">[2025.05]</span> &#x1F389; Two papers accepted at <strong>ICML 2025</strong>: <a href="https://arxiv.org/pdf/2507.10539" target="_blank" rel="noopener">Graph World Model</a> and <a href="https://arxiv.org/pdf/2412.17767" target="_blank" rel="noopener">Researchtown</a>.</li><li><span class="news-date">[2025.03]</span> &#x1F389; <a href="https://arxiv.org/pdf/2410.11001" target="_blank" rel="noopener">Graph of Records</a> was accepted at <strong>ACL 2025</strong>.</li><li><span class="news-date">[2025.01]</span> &#x1F389; Two papers accepted at <strong>ICLR 2025</strong>: <a href="https://openreview.net/forum?id=eU39PDsZtT" target="_blank" rel="noopener">GraphRouter</a> and <a href="https://openreview.net/forum?id=5RUM1aIdok" target="_blank" rel="noopener">GraphEval</a>.</li></ul>
+    </section>
+    <section class="research-section" aria-labelledby="research-heading"><h2 class="subtitle" id="research-heading">Research Focus</h2>
+      <p>My work spans the following research directions:</p><ul class="bio-thrusts">
             <li><strong>Agentic RL:</strong> Reinforcement learning for autonomous agent decision-making at scale.</li>
             <li><strong>Agentic Memory:</strong> Memory mechanisms enabling self-evolving and long-horizon agents.</li>
             <li><strong>Agentic LLM Reasoning:</strong> Teaching LLMs to reason and plan via RL-based training.</li>
             <li><strong>Agentic LLM Routing & Orchestration:</strong> Intelligent multi-LLM selection, routing, and collaboration.</li>
             <li><strong>Agentic Graph Intelligence:</strong> Graph-based frameworks for LLM agents and structured reasoning.</li>
             <li><strong>Agentic AI for Science:</strong> Deploying agentic systems to accelerate scientific discovery.</li>
-          </ul>
-          <p>
+          </ul><p>
             These thrusts are powered by rigorous research at the intersection of <strong>RL, Memory, LLMs, and Graph Learning</strong>, with the goal of architecting trustworthy AI agents that serve as partners for human advancement.
           </p>
-          <div class="bio-links">
-            <span style="color:#475569">冯涛</span>
-            <a href="mailto:taofeng2@illinois.edu">Email</a>
-            <a href="https://scholar.google.com/citations?user=3xK6SlIAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
-            <a href="https://github.com/ft2023" target="_blank">GitHub</a>
-          </div>
-        </div>
-        <img class="bio-photo" src="images/133501742692355_.pic_hd.jpg" alt="Tao Feng">
+    </section>
+    <section id="publications" aria-labelledby="pub-heading">
+      <div class="publication-heading"><h2 class="subtitle" id="pub-heading">Publications</h2><nav class="view-modes" aria-label="Publication view" hidden><span>(</span><button type="button" data-view="selected" aria-pressed="true">show selected</button><span>/</span><button type="button" data-view="date" aria-pressed="false">show all by date</button><span>/</span><button type="button" data-view="topic" aria-pressed="false">show all by topic</button><span>)</span></nav></div>
+      <div class="publication-controls" hidden><p class="topics"><span>Topics:</span> <button type="button" class="topic-button" data-topic="All" aria-pressed="true">All</button> / <button type="button" class="topic-button" data-topic="Agentic RL" aria-pressed="false">Agentic RL</button> / <button type="button" class="topic-button" data-topic="Agentic Memory" aria-pressed="false">Agentic Memory</button> / <button type="button" class="topic-button" data-topic="Agentic LLM Reasoning" aria-pressed="false">Agentic LLM Reasoning</button> / <button type="button" class="topic-button" data-topic="Agentic LLM Routing &amp; Orchestration" aria-pressed="false">Agentic LLM Routing &amp; Orchestration</button> / <button type="button" class="topic-button" data-topic="Agentic Graph Intelligence" aria-pressed="false">Agentic Graph Intelligence</button> / <button type="button" class="topic-button" data-topic="Agentic AI for Science" aria-pressed="false">Agentic AI for Science</button> / <button type="button" class="topic-button" data-topic="Causal Discovery and Inference" aria-pressed="false">Causal Discovery and Inference</button> / <button type="button" class="topic-button" data-topic="Surveys" aria-pressed="false">Surveys</button></p>
+        <div class="search-row"><label for="pub-search">Search publications</label><input type="search" id="pub-search" placeholder="Title, author, or topic"><span id="pub-count" role="status" aria-live="polite"></span></div>
       </div>
-    </div>
-  </div>
-
-  <!-- ======== News ======== -->
-  <div class="news-section">
-    <div class="container">
-      <h2 class="section-title">News</h2>
-      <div class="news-list">
-        <div class="news-item">
-          <span class="news-date">[2026.07.01]</span> &#x1F389; <a href="https://arxiv.org/pdf/2507.10540" target="_blank">FusionFactory</a> was accepted at <strong>TMLR 2026</strong>! A framework for fusing LLM capabilities with multi-LLM log data.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.06.30]</span> &#x1F389; <a href="https://arxiv.org/abs/2602.06052" target="_blank">Rethinking Memory Mechanisms of Foundation Agents in the Second Half</a> was accepted at <strong>TMLR 2026</strong>! A survey unifying foundation agent memory along substrate, cognitive mechanism, and subject dimensions.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.04.30]</span> &#x1F389; Three papers accepted at <strong>ICML 2026</strong>: <a href="https://arxiv.org/abs/2606.01041" target="_blank">ExpWeaver</a>, <a href="https://arxiv.org/abs/2602.00959" target="_blank">Probing the Knowledge Boundary</a>, and <a href="https://arxiv.org/abs/2602.06025" target="_blank">BudgetMem</a>.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.04]</span> &#x1F389; <a href="https://arxiv.org/abs/2601.19423" target="_blank">UniRec</a> was accepted at <strong>TMLR 2026</strong>! A unified multimodal encoding framework for LLM-based recommendations that integrates semantic and ID representations across modalities.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.04]</span> &#x1F389; <a href="https://openreview.net/forum?id=emCcuhtENL" target="_blank">Thought-Retriever</a> was accepted at <strong>TMLR 2026</strong>! A model-agnostic algorithm that enables LLMs to effectively utilize external data by retrieving thoughts instead of raw data.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Introducing <a href="https://arxiv.org/abs/2602.06025" target="_blank">BudgetMem</a>, a runtime agent memory framework for explicit performance-cost control. <strong>BudgetMem</strong> equips each memory module with Low/Mid/High budget tiers and learns query-aware budget-tier routing to deliver controllable on-demand memory extraction.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.02]</span> &#x1F680;&#x1F680; Released <a href="https://arxiv.org/abs/2602.02474" target="_blank">MemSkill</a>, a framework for learning and evolving memory skills for LLM agents. <strong>MemSkill</strong> shifts agent memory to span-level, skill-conditioned generation, enabling reusable and self-evolving memory behaviors.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2026.01]</span> &#x1F389; <a href="https://openreview.net/forum?id=GraphPlanner" target="_blank">GraphPlanner</a> was accepted at <strong>ICLR 2026</strong>! A graph memory-augmented agentic routing framework for multi-agent LLMs.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2025.12]</span> &#x1F680;&#x1F680; Open-sourced <a href="https://github.com/ulab-uiuc/LLMRouter" target="_blank">LLMRouter</a>, a unified and extensible framework for training, evaluating, and benchmarking single-round, multi-round, agentic, and personalized LLM routers. <strong>LLMRouter</strong> is designed to reduce duplicated engineering effort, enable fair comparison across routing methods, and foster community-driven development. &#x2B50; <strong style="color:#f59e0b;">2,100+ GitHub Stars!</strong> We warmly welcome contributions and integrations from the community!
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2025.06]</span> &#x1F389; <a href="https://arxiv.org/pdf/2506.09033" target="_blank">Router-R1</a> was accepted at <strong>NeurIPS 2025</strong>! Teaching LLMs multi-round routing and aggregation via reinforcement learning.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2025.05]</span> &#x1F389; Two papers accepted at <strong>ICML 2025</strong>: <a href="https://arxiv.org/pdf/2507.10539" target="_blank">Graph World Model</a> and <a href="https://arxiv.org/pdf/2412.17767" target="_blank">Researchtown</a>.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2025.03]</span> &#x1F389; <a href="https://arxiv.org/pdf/2410.11001" target="_blank">Graph of Records</a> was accepted at <strong>ACL 2025</strong>.
-        </div>
-        <div class="news-item">
-          <span class="news-date">[2025.01]</span> &#x1F389; Two papers accepted at <strong>ICLR 2025</strong>: <a href="https://openreview.net/forum?id=eU39PDsZtT" target="_blank">GraphRouter</a> and <a href="https://openreview.net/forum?id=5RUM1aIdok" target="_blank">GraphEval</a>.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======== Publications ======== -->
-  <div class="pub-section" id="publications">
-    <div class="container">
-      <h2 class="section-title">Publications</h2>
-      <div class="view-mode-row" id="view-mode-row"></div>
-
-      <!-- Search -->
-      <div class="search-wrapper">
-        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="pub-search" placeholder="Search by title or tag...">
-      </div>
-
-      <!-- Filter Tags -->
-      <div class="filter-tags" id="filter-tags"></div>
-
-      <!-- Grid -->
-      <div class="pub-grid" id="pub-grid"></div>
-    </div>
-  </div>
-
-  <!-- ======== Footer ======== -->
-  <div class="container">
-    <div class="footer">
-      <a href="https://jonbarron.info/" target="_blank" style="color:#94a3b8">Site source</a>
-    </div>
-  </div>
-
-  <!-- ======== Publication Data & Rendering ======== -->
-  <script>
-  // Research direction order
-  const CATEGORIES = [
-    "Agentic RL",
-    "Agentic Memory",
-    "Agentic LLM Reasoning",
-    "Agentic LLM Routing & Orchestration",
-    "Agentic Graph Intelligence",
-    "Agentic AI for Science",
-    "Causal Discovery and Inference",
-    "Surveys"
-  ];
-
-  const PUBS = [
-    // ---- Agentic LLM Reasoning ----
-    {
-      title: "FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data",
-      authors: ["Tao Feng*", "Haozhen Zhang*", "Zijie Lei", "Pengrui Han", "Mostofa Patwary", "Mohammad Shoeybi", "Bryan Catanzaro", "Jiaxuan You"],
-      venue: "TMLR, 2026",
-      category: "Agentic LLM Reasoning",
-      tags: ["LLM Reasoning", "LLM with RL", "Agent"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2507.10540" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/FusionFactory" }
-      ]
-    },
-    {
-      title: "LRanker: LLM Ranker for Massive Candidates",
-      authors: ["Tao Feng", "Zijie Lei", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
-      venue: "Arxiv, 2026",
-      category: "Agentic LLM Reasoning",
-      extraCategories: ["Agentic Graph Intelligence"],
-      tags: ["LLM Reasoning", "Ranking", "Graph"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2605.27810" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/LRanker" }
-      ]
-    },
-    {
-      title: "R1-Ranker: Teaching LLM Rankers to Reason",
-      authors: ["Tao Feng", "Zhigang Hua", "Zijie Lei", "Yan Xie", "Shuang Yang", "Bo Long", "Jiaxuan You"],
-      venue: "IJCAI 2025 Workshop on Causal Learning for Recommendation Systems",
-      category: "Agentic LLM Reasoning",
-      extraCategories: ["Agentic RL"],
-      tags: ["LLM Reasoning", "LLM with RL", "Recsys"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2506.21638" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/IRanker" }
-      ]
-    },
-    {
-      title: "Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning",
-      authors: ["Haozhen Zhang", "Tao Feng", "Jiaxuan You"],
-      venue: "NeurIPS, 2025",
-      category: "Agentic LLM Reasoning",
-      extraCategories: ["Agentic RL"],
-      tags: ["LLM Reasoning", "LLM with RL", "Router", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2506.09033" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/Router-R1" }
-      ]
-    },
-    {
-      title: "Multi-Agent Evolve: LLM Self-Improve through Co-evolution",
-      authors: ["Yixing Chen", "Yiding Wang", "Siqi Zhu", "Haofei Yu", "Tao Feng", "Muhan Zhang", "Mostofa Patwary", "Jiaxuan You"],
-      venue: "Arxiv, 2025",
-      category: "Agentic LLM Reasoning",
-      extraCategories: ["Agentic RL"],
-      tags: ["LLM Reasoning", "Self Evolve", "Agent"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2510.23595" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/Multi-agent-Evolve" }
-      ]
-    },
-    {
-      title: "Citing: Large Language Models Create Curriculum for Instruction Tuning",
-      authors: ["Tao Feng", "Zifeng Wang", "Jimeng Sun"],
-      venue: "Arxiv, 2023",
-      category: "Agentic LLM Reasoning",
-      tags: ["LLM Reasoning", "LLM"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2310.02527" }
-      ]
-    },
-
-    // ---- Agentic LLM Routing & Orchestration ----
-    {
-      title: "GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs",
-      authors: ["Tao Feng", "Haozhen Zhang", "Pengrui Han", "Zijie Lei", "Jiaxuan You"],
-      venue: "ICLR, 2026",
-      category: "Agentic LLM Routing & Orchestration",
-      extraCategories: ["Agentic RL", "Agentic Memory"],
-      tags: ["Router", "Agent", "Graph", "Memory", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://openreview.net/forum?id=GraphPlanner" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GraphPlanner" }
-      ]
-    },
-    {
-      title: "GraphRouter: A Graph-based Router for LLM Selections",
-      authors: ["Tao Feng", "Yanzhen Shen", "Jiaxuan You"],
-      venue: "ICLR, 2025",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Router", "Graph", "LLM Router", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://openreview.net/forum?id=eU39PDsZtT" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GraphRouter" }
-      ]
-    },
-    {
-      title: "RouteProfile: Graph-Based Profiling for Cold-Start LLM Routing",
-      authors: ["Jingjun Xu", "Hongji Pu", "Tao Feng", "Haozhen Zhang", "Jiaxuan You", "Ge Liu"],
-      venue: "Arxiv, 2026",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Router", "Graph", "LLM Router"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2605.00180" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/RouteProfile" }
-      ]
-    },
-    {
-      title: "PersonalizedRouter: Personalized LLM Routing via Graph-based User Preference Modeling",
-      authors: ["Zhongjie Dai*", "Tao Feng*", "Jiaxuan You"],
-      venue: "TMLR, 2025",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Router", "Graph", "Personalization", "LLM Router", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2511.16883" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/PersonalizedRouter" }
-      ]
-    },
-    {
-      title: "GMTRouter: Personalized LLM Router over Multi-turn User Interactions",
-      authors: ["Enze Xie", "Yihang Sun", "Tao Feng", "Jiaxuan You"],
-      venue: "Arxiv, 2025",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Router", "Personalization", "LLM Router"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2511.08590" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GMTRouter" }
-      ]
-    },
-    {
-      title: "PREMIUM: LLM Personalization with Individual-level Preference Feedback",
-      authors: ["Yihang Sun", "Tao Feng", "Ge Liu", "Jiaxuan You"],
-      venue: "Arxiv, 2025",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Personalization", "LLM"],
-      links: []
-    },
-    {
-      title: "UniRec: Unified Multimodal Encoding for LLM-Based Recommendations",
-      authors: ["Zijie Lei", "Tao Feng", "Zhigang Hua", "Yan Xie", "Guanyu Lin", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
-      venue: "TMLR, 2026",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Recsys", "LLM", "Multimodal"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2601.19423" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/UniRec" }
-      ]
-    },
-    {
-      title: "Causally-Informed Unified Semantic and ID Representation Learning",
-      authors: ["Guanyu Lin", "Tao Feng", "Jiaxuan You"],
-      venue: "IJCAI 2025 Workshop on Causal Learning for Recommendation Systems",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Recsys", "Causal"],
-      links: []
-    },
-    {
-      title: "Unified Semantic and ID Representation Learning for Deep Recommenders",
-      authors: ["Guanyu Lin", "Zhigang Hua", "Tao Feng", "Shuang Yang", "Bo Long", "Jiaxuan You"],
-      venue: "Arxiv, 2025",
-      category: "Agentic LLM Routing & Orchestration",
-      tags: ["Recsys", "LLM"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2502.16474" },
-        { name: "Code", url: "https://github.com/Guanyu-Lin/Unified_Semantic_ID" }
-      ]
-    },
-
-    // ---- Agentic Memory ----
-    {
-      title: "Rethinking Memory Mechanisms of Foundation Agents in the Second Half",
-      authors: ["Wei-Cheng Huang", "Wei Zhang", "Yifan Liang", "Yijun Bei", "Yuxiang Chen", "Tao Feng", "Xinpeng Pan", "Zhitao Tan", "et al."],
-      venue: "TMLR, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Surveys"],
-      tags: ["Memory", "Agent", "Survey"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2602.06052" },
-        { name: "Code", url: "https://github.com/AgentMemoryWorld/Awesome-Agent-Memory" }
-      ]
-    },
-    {
-      title: "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
-      authors: ["Haozhen Zhang", "Qihang Long", "Jiantao Bao", "Tao Feng", "Wei Zhang", "Hao Yue", "Wei Wang"],
-      venue: "Arxiv, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic RL"],
-      tags: ["Memory", "Agent", "Self Evolve"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2602.02474" },
-        { name: "Code", url: "https://github.com/ViktorAxelsen/MemSkill" }
-      ]
-    },
-    {
-      title: "ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents",
-      authors: ["Tao Feng", "Chongrui Ye", "Tianyang Luo", "Jingjun Xu", "Xueqiang Xu", "Haozhen Zhang", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
-      venue: "Arxiv, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic RL"],
-      tags: ["Memory", "Graph", "Agent", "LLM with RL"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2605.30712" }
-      ]
-    },
-    {
-      title: "ElasticMem: Latent Memory as a Learnable Resource for LLM Agents",
-      authors: ["Tao Feng", "Chongrui Ye", "Tianyang Luo", "Jingjun Xu", "Xueqiang Xu", "Haozhen Zhang", "Ge Liu", "Jiaxuan You"],
-      venue: "Arxiv, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic RL"],
-      tags: ["Memory", "Agent", "LLM with RL"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2605.30690" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/ElasticMem" }
-      ]
-    },
-    {
-      title: "ExpWeaver: LLM Agents Learn from Experience via Latent RAG",
-      authors: ["Tao Feng", "Tianyang Luo", "Jingjun Xu", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
-      venue: "ICML, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic RL"],
-      tags: ["Memory", "RAG", "Agent", "LLM with RL"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2606.01041" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/ExpWeaver" }
-      ]
-    },
-    {
-      title: "MemReward: Graph-Based Experience Memory for LLM Reward Prediction with Limited Labels",
-      authors: ["Tian Luo", "Tao Feng", "Zhigang Hua", "Yan Xie", "Shuang Yang", "Ge Liu", "Jiaxuan You"],
-      venue: "Arxiv, 2026",
-      category: "Agentic Memory",
-      tags: ["Memory", "Graph", "LLM with RL"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2603.19310" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/MemReward" }
-      ]
-    },
-    {
-      title: "Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory",
-      authors: ["Haozhen Zhang", "Hao Yue", "Tao Feng", "Qihang Long", "Jiantao Bao", "Bo Jin", "Wei Zhang", "Xiangrong Li", "Jiaxuan You", "et al."],
-      venue: "ICML, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic RL"],
-      tags: ["Memory", "Agent", "Router"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2602.06025" },
-        { name: "Code", url: "https://github.com/ViktorAxelsen/BudgetMem" }
-      ]
-    },
-
-    // ---- Agentic Graph Intelligence ----
-    {
-      title: "Graph World Model",
-      authors: ["Tao Feng", "Yexin Wu", "Guanyu Lin", "Jiaxuan You"],
-      venue: "ICML, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "LLM", "Agent", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2507.10539" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GWM" }
-      ]
-    },
-    {
-      title: "Researchtown: Simulator of Human Research Community",
-      authors: ["Haofei Yu", "Zhaochen Hong", "Zirui Cheng", "Kunlun Zhu", "Keyang Xuan", "Jinwei Yao", "Tao Feng", "Jiaxuan You"],
-      venue: "ICML, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "Agent", "Social Agent", "Simulation", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2412.17767" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/research-town" }
-      ]
-    },
-    {
-      title: "Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs",
-      authors: ["Haozhen Zhang", "Tao Feng", "Jiaxuan You"],
-      venue: "ACL, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "RAG", "LLM", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2410.11001" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GoR" }
-      ]
-    },
-    {
-      title: "GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation",
-      authors: ["Tao Feng*", "Yihang Sun*", "Jiaxuan You"],
-      venue: "ICLR, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "Evaluation", "LLM", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://openreview.net/forum?id=5RUM1aIdok" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/GraphEval" }
-      ]
-    },
-    {
-      title: "Thought-Retriever: Don't Just Retrieve Raw Data, Retrieve Thoughts",
-      authors: ["Tao Feng*", "Pengrui Han*", "Guanyu Lin*", "Ge Liu", "Jiaxuan You"],
-      venue: "TMLR, 2026",
-      category: "Agentic Memory",
-      extraCategories: ["Agentic Graph Intelligence"],
-      tags: ["Memory", "Graph", "RAG", "LLM"],
-      links: [
-        { name: "Paper", url: "https://openreview.net/forum?id=emCcuhtENL" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/Thought-Retriever" }
-      ]
-    },
-    {
-      title: "Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance",
-      authors: ["Guanyu Lin*", "Tao Feng*", "Pengrui Han*", "Ge Liu", "Jiaxuan You"],
-      venue: "EMNLP (System Demo), 2024",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "Agent", "Demo", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2409.04593" },
-        { name: "Demo", url: "https://huggingface.co/spaces/ulab-ai/ArxivCopilot" }
-      ]
-    },
-    {
-      title: "AcademicEval: Live Long-Context LLM Benchmark",
-      authors: ["Haozhen Zhang", "Tao Feng", "Pengrui Han", "Jiaxuan You"],
-      venue: "TMLR, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Evaluation", "LLM", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2510.17725" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/AcademicEval" }
-      ]
-    },
-    {
-      title: "Probing the Knowledge Boundary: An Interactive Agentic Framework for Deep Knowledge Extraction",
-      authors: ["Yifan Yang", "Shuo Zhu", "Tao Feng", "Ge Liu", "Jiaxuan You"],
-      venue: "ICML, 2026",
-      category: "Agentic Graph Intelligence",
-      tags: ["Agent", "LLM", "Evaluation"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2602.00959" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/KnowledgeExtraction" }
-      ]
-    },
-    {
-      title: "ResearchArcade: Graph Interface for Academic Tasks",
-      authors: ["Jiaxin Xu", "Chao Lin", "Haofei Yu", "Tao Feng", "Jiaxuan You"],
-      venue: "Arxiv, 2025",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph", "Agent", "Demo"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2511.22036" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/research-arcade" }
-      ]
-    },
-    {
-      title: "RDBench: ML Benchmark for Relational Databases",
-      authors: ["Zizhao Zhang", "Yi Yang", "Lutong Zou", "He Wen", "Tao Feng", "Jiaxuan You"],
-      venue: "Arxiv, 2023",
-      category: "Agentic Graph Intelligence",
-      tags: ["Graph for DB", "Evaluation"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2310.16837" }
-      ]
-    },
-
-    // ---- Agentic RL ----
-    {
-      title: "ILRoute: A Graph-based Imitation Learning Method to Unveil Riders' Routing Strategies in Food Delivery Service",
-      authors: ["Tao Feng", "Huan Yan", "Huandong Wang", "Wenzhen Huang", "Yuyang Han", "Hongsen Liao", "Jinghua Hao", "Yong Li"],
-      venue: "KDD, 2023",
-      category: "Agentic RL",
-      tags: ["Agent", "RL", "Graph", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599844" }
-      ]
-    },
-    {
-      title: "Precise Mobility Intervention for Epidemic Control Using Unobservable Information via Deep Reinforcement Learning",
-      authors: ["Tao Feng", "Tong Xia", "Xiaochen Fan", "Huandong Wang", "Zefang Zong", "Yong Li"],
-      venue: "KDD, 2022",
-      category: "Agentic RL",
-      tags: ["RL", "Agent", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3534678.3539195" }
-      ]
-    },
-    {
-      title: "GAT-MF: Graph Attention Mean Field for Very Large Scale Multi-Agent Reinforcement Learning",
-      authors: ["Qianyue Hao", "Wenzhen Huang", "Tao Feng", "Jian Yuan", "Yong Li"],
-      venue: "KDD, 2023",
-      category: "Agentic RL",
-      tags: ["RL", "Agent", "Graph", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599359" },
-        { name: "Code", url: "https://github.com/tsinghua-fib-lab/Large-Scale-MARL-GATMF" }
-      ]
-    },
-    {
-      title: "Contact Tracing and Epidemic Intervention via Deep Reinforcement Learning",
-      authors: ["Tao Feng", "Sirui Song", "Tong Xia", "Yong Li"],
-      venue: "ACM TKDD, 2023",
-      category: "Agentic RL",
-      tags: ["RL", "Agent", "Peer Reviewed"],
-      links: []
-    },
-    {
-      title: "EPR-GAIL: An EPR-Enhanced Hierarchical Imitation Learning Framework to Simulate Complex User Consumption Behaviors",
-      authors: ["Tao Feng", "Yunke Zhang", "Huandong Wang", "Yong Li"],
-      venue: "Arxiv, 2025",
-      category: "Agentic RL",
-      tags: ["RL", "Agent", "Simulation"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2503.06392" }
-      ]
-    },
-    {
-      title: "Reviving the Economy While Saving Lives: A Deep Reinforcement Learning Approach for Smart POI Reopening",
-      authors: ["Tao Feng", "Huandong Wang", "Xiaochen Fan", "Tong Xia", "Yong Li"],
-      venue: "SIGSPATIAL, 2022",
-      category: "Agentic RL",
-      tags: ["RL", "Agent", "Peer Reviewed"],
-      links: []
-    },
-    {
-      title: "A Multi-scale Ensemble Learning Model for Cellular Traffic Prediction",
-      authors: ["Chengfeng Gao*", "Tao Feng*", "Huandong Wang", "Depeng Jin", "Jie Feng", "Xianghui Wang", "Liping Zhu", "Chao Deng"],
-      venue: "IEEE GLOBECOM, 2022",
-      category: "Agentic Graph Intelligence",
-      tags: ["Temporal", "Graph", "Peer Reviewed"],
-      links: []
-    },
-
-    // ---- Agentic AI for Science ----
-    {
-      title: "Deep Reinforcement Learning for Modelling Protein Complexes",
-      authors: ["Tao Feng", "Ziqi Gao", "Jiaxuan You", "Chenyi Zi", "Yan Zhou", "Chen Zhang", "Jia Li"],
-      venue: "ICLR, 2024",
-      category: "Agentic AI for Science",
-      tags: ["AI for Science", "RL", "Graph", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2405.02299" }
-      ]
-    },
-    {
-      title: "Molecular De Novo Design through Transformer-based Reinforcement Learning",
-      authors: ["Tao Feng", "Pengcheng Xu", "Tianfan Fu", "Jimeng Sun"],
-      venue: "Arxiv, 2024",
-      category: "Agentic AI for Science",
-      tags: ["AI for Science", "RL", "LLM"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2310.05365" }
-      ]
-    },
-
-    // ---- Causal Discovery ----
-    {
-      title: "Causal Discovery and Inference towards Urban Elements and Associated Factors",
-      authors: ["Tao Feng", "Yunke Zhang", "Xiaochen Fan", "Huandong Wang", "Yong Li"],
-      venue: "Arxiv, 2025",
-      category: "Causal Discovery and Inference",
-      tags: ["Causal", "RL"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/pdf/2503.06395" }
-      ]
-    },
-    {
-      title: "Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities",
-      authors: ["Tao Feng", "Yunke Zhang", "Xiaochen Fan", "Huandong Wang", "Yong Li"],
-      venue: "Arxiv, 2025",
-      category: "Causal Discovery and Inference",
-      tags: ["Causal", "RL", "Graph"],
-      links: [
-        { name: "Paper", url: "https://arxiv.org/abs/2503.06398" }
-      ]
-    },
-
-    // ---- Surveys ----
-    {
-      title: "How Far Are We From AGI: Are LLMs All We Need?",
-      authors: ["Tao Feng*", "Chuanyang Jin*", "Jingyu Liu*", "Kunlun Zhu*", "Haoqin Tu", "Zirui Cheng", "Guanyu Lin", "Jiaxuan You"],
-      venue: "TMLR, 2024",
-      category: "Surveys",
-      tags: ["Survey", "LLM", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://openreview.net/forum?id=H2ZKqfNd0U" },
-        { name: "Code", url: "https://github.com/ulab-uiuc/AGI-survey" }
-      ]
-    },
-    {
-      title: "Deep Reinforcement Learning for Demand Driven Services in Logistics and Transportation Systems: A Survey",
-      authors: ["Zefang Zong", "Tao Feng", "Jingwei Wang", "Tong Xia", "Yong Li"],
-      venue: "ACM TKDD, 2024",
-      category: "Surveys",
-      tags: ["Survey", "RL", "Peer Reviewed"],
-      links: [
-        { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3708325" }
-      ]
-    }
-  ];
-
-  // SVG icons
-  const ICONS = {
-    paper: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
-    code: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-    demo: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
-  };
-
-  function getIcon(name) {
-    const n = name.toLowerCase();
-    if (n === 'code') return ICONS.code;
-    if (n === 'demo') return ICONS.demo;
-    return ICONS.paper;
-  }
-
-  function getYear(pub) {
-    const m = pub.venue.match(/\d{4}/);
-    return m ? parseInt(m[0], 10) : 0;
-  }
-
-  function getMonth(pub) {
-    // Refine same-year ordering using the arXiv ID's YYMM prefix, when present
-    const paperUrl = (pub.links.find(l => l.name === 'Paper') || {}).url || '';
-    const m = paperUrl.match(/(\d{2})(\d{2})\.\d{4,5}/);
-    if (m) {
-      const yy = 2000 + parseInt(m[1], 10);
-      const mm = parseInt(m[2], 10);
-      if (yy === getYear(pub)) return mm;
-    }
-    return 0;
-  }
-
-  function compareByDate(a, b) {
-    const yearDiff = getYear(b) - getYear(a);
-    if (yearDiff !== 0) return yearDiff;
-    return getMonth(b) - getMonth(a);
-  }
-
-  function isSelected(pub) {
-    const cats = [pub.category, ...(pub.extraCategories || [])];
-    return cats.includes('Agentic RL');
-  }
-
-  // Render
-  let activeTag = 'All';
-  let searchTerm = '';
-  let viewMode = 'selected'; // 'selected' | 'date' | 'topic'
-
-  function renderCard(pub) {
-    const authorsHtml = pub.authors.map(a =>
-      a.toLowerCase().includes('tao feng') ? `<strong>${a}</strong>` : a
-    ).join(', ');
-
-    const linksHtml = pub.links.map(l =>
-      `<a href="${l.url}" target="_blank" rel="noopener">${getIcon(l.name)} ${l.name}</a>`
-    ).join('');
-
-    return `<div class="pub-card">
-      <div style="flex:1">
-        <div class="pub-card-title">${pub.links.length > 0
-          ? `<a href="${pub.links[0].url}" target="_blank" rel="noopener">${pub.title}</a>`
-          : pub.title}</div>
-        <div class="pub-card-authors">${authorsHtml}</div>
-        <div class="pub-card-venue">${pub.venue}</div>
-      </div>
-      <div class="pub-card-footer">
-        ${linksHtml ? `<div class="pub-card-links">${linksHtml}</div>` : ''}
-        <div class="pub-card-tags"><button class="inline-tag" onclick="setTag('${pub.category}')">${pub.category}</button></div>
-      </div>
-    </div>`;
-  }
-
-  function render() {
-    const grid = document.getElementById('pub-grid');
-    const term = searchTerm.toLowerCase().trim();
-
-    let filtered = PUBS.filter(pub => {
-      const allCats = [pub.category, ...(pub.extraCategories || [])];
-      const matchTag = activeTag === 'All' || allCats.includes(activeTag);
-      const matchSearch = term === '' ||
-        pub.title.toLowerCase().includes(term) ||
-        pub.category.toLowerCase().includes(term) ||
-        pub.authors.some(a => a.toLowerCase().includes(term));
-      return matchTag && matchSearch;
-    });
-
-    if (viewMode === 'selected') {
-      filtered = filtered.filter(isSelected);
-    }
-
-    if (filtered.length === 0) {
-      grid.innerHTML = '<div class="no-results"><p>No publications found.</p><button onclick="clearFilters()">Clear Search & Filters</button></div>';
-      return;
-    }
-
-    if (viewMode === 'selected') {
-      // Curated subset, sorted chronologically (newest first), flat list
-      const sorted = filtered.slice().sort(compareByDate);
-      grid.innerHTML = sorted.map(renderCard).join('');
-    } else if (viewMode === 'date') {
-      // All publications grouped under year headers, sorted chronologically
-      const sorted = filtered.slice().sort(compareByDate);
-      let html = '';
-      let lastYear = null;
-      sorted.forEach(pub => {
-        const year = getYear(pub);
-        if (year !== lastYear) {
-          html += `<div class="year-header">${year}</div>`;
-          lastYear = year;
-        }
-        html += renderCard(pub);
-      });
-      grid.innerHTML = html;
-    } else if (activeTag === 'All' && term === '') {
-      // "By topic" default: group by category with section headers, chronological within each
-      let html = '';
-      CATEGORIES.forEach(cat => {
-        const catPubs = filtered.filter(p => p.category === cat || (p.extraCategories || []).includes(cat))
-          .slice().sort(compareByDate);
-        if (catPubs.length === 0) return;
-        html += `<div class="category-header">${cat} <span class="category-count">(${catPubs.length})</span></div>`;
-        html += catPubs.map(renderCard).join('');
-      });
-      grid.innerHTML = html;
-    } else {
-      // Filtered view: flat grid, chronological
-      grid.innerHTML = filtered.slice().sort(compareByDate).map(renderCard).join('');
-    }
-  }
-
-  function renderViewModeRow() {
-    const container = document.getElementById('view-mode-row');
-    const modes = [
-      { key: 'selected', label: 'show selected' },
-      { key: 'date', label: 'show all by date' },
-      { key: 'topic', label: 'show all by topic' }
-    ];
-    container.innerHTML = modes.map((m, i) => {
-      const btn = `<button class="view-mode-link ${viewMode === m.key ? 'active' : ''}" onclick="setViewMode('${m.key}')">${m.label}</button>`;
-      return i === 0 ? btn : `<span class="view-mode-sep">/</span>${btn}`;
-    }).join('');
-  }
-
-  function setViewMode(mode) {
-    viewMode = mode;
-    renderViewModeRow();
-    render();
-  }
-
-  function renderTags() {
-    const container = document.getElementById('filter-tags');
-    container.innerHTML = `<button class="filter-btn ${activeTag === 'All' ? 'active' : ''}" onclick="setTag('All')">All</button>` +
-      CATEGORIES.map(cat => {
-        const count = PUBS.filter(p => p.category === cat).length;
-        return `<button class="filter-btn ${activeTag === cat ? 'active' : ''}" onclick="setTag('${cat}')">${cat}</button>`;
-      }).join('');
-  }
-
-  function setTag(tag) {
-    activeTag = tag;
-    renderTags();
-    render();
-    document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function clearFilters() {
-    activeTag = 'All';
-    searchTerm = '';
-    document.getElementById('pub-search').value = '';
-    renderTags();
-    render();
-  }
-
-  document.getElementById('pub-search').addEventListener('input', function(e) {
-    searchTerm = e.target.value;
-    render();
-  });
-
-  // Init
-  renderViewModeRow();
-  renderTags();
-  render();
-  </script>
+      <p class="contribution-note">* indicates equal contribution.</p>
+      <div id="pub-card-container"><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic RL&quot;]" data-year="2026" data-selected="true" data-search="expweaver: llm agents learn from experience via latent rag tao feng tianyang luo jingjun xu zhigang hua yan xie shuang yang ge liu jiaxuan you agentic memory agentic rl memory rag agent llm with rl">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2606.01041" target="_blank" rel="noopener">ExpWeaver: LLM Agents Learn from Experience via Latent RAG</a></h3><p class="authors"><strong>Tao Feng</strong>, Tianyang Luo, Jingjun Xu, Zhigang Hua, Yan Xie, Shuang Yang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">ICML, 2026</span> · <a href="https://arxiv.org/abs/2606.01041" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/ExpWeaver" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;, &quot;Agentic Graph Intelligence&quot;]" data-year="2026" data-selected="false" data-search="lranker: llm ranker for massive candidates tao feng zijie lei zhigang hua yan xie shuang yang ge liu jiaxuan you agentic llm reasoning agentic graph intelligence llm reasoning ranking graph">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2605.27810" target="_blank" rel="noopener">LRanker: LLM Ranker for Massive Candidates</a></h3><p class="authors"><strong>Tao Feng</strong>, Zijie Lei, Zhigang Hua, Yan Xie, Shuang Yang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2605.27810" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/LRanker" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2026" data-selected="false" data-search="routeprofile: graph-based profiling for cold-start llm routing jingjun xu hongji pu tao feng haozhen zhang jiaxuan you ge liu agentic llm routing &amp; orchestration router graph llm router">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2605.00180" target="_blank" rel="noopener">RouteProfile: Graph-Based Profiling for Cold-Start LLM Routing</a></h3><p class="authors">Jingjun Xu, Hongji Pu, <strong>Tao Feng</strong>, Haozhen Zhang, Jiaxuan You, Ge Liu</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2605.00180" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/RouteProfile" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic RL&quot;]" data-year="2026" data-selected="true" data-search="expgraph: model-agnostic experience learning with graph-structured memory for llm agents tao feng chongrui ye tianyang luo jingjun xu xueqiang xu haozhen zhang zhigang hua yan xie shuang yang ge liu jiaxuan you agentic memory agentic rl memory graph agent llm with rl">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2605.30712" target="_blank" rel="noopener">ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents</a></h3><p class="authors"><strong>Tao Feng</strong>, Chongrui Ye, Tianyang Luo, Jingjun Xu, Xueqiang Xu, Haozhen Zhang, Zhigang Hua, Yan Xie, Shuang Yang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2605.30712" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic RL&quot;]" data-year="2026" data-selected="true" data-search="elasticmem: latent memory as a learnable resource for llm agents tao feng chongrui ye tianyang luo jingjun xu xueqiang xu haozhen zhang ge liu jiaxuan you agentic memory agentic rl memory agent llm with rl">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2605.30690" target="_blank" rel="noopener">ElasticMem: Latent Memory as a Learnable Resource for LLM Agents</a></h3><p class="authors"><strong>Tao Feng</strong>, Chongrui Ye, Tianyang Luo, Jingjun Xu, Xueqiang Xu, Haozhen Zhang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2605.30690" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/ElasticMem" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;]" data-year="2026" data-selected="false" data-search="memreward: graph-based experience memory for llm reward prediction with limited labels tian luo tao feng zhigang hua yan xie shuang yang ge liu jiaxuan you agentic memory memory graph llm with rl">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2603.19310" target="_blank" rel="noopener">MemReward: Graph-Based Experience Memory for LLM Reward Prediction with Limited Labels</a></h3><p class="authors">Tian Luo, <strong>Tao Feng</strong>, Zhigang Hua, Yan Xie, Shuang Yang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2603.19310" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/MemReward" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Surveys&quot;]" data-year="2026" data-selected="false" data-search="rethinking memory mechanisms of foundation agents in the second half wei-cheng huang wei zhang yifan liang yijun bei yuxiang chen tao feng xinpeng pan zhitao tan et al. agentic memory surveys memory agent survey">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2602.06052" target="_blank" rel="noopener">Rethinking Memory Mechanisms of Foundation Agents in the Second Half</a></h3><p class="authors">Wei-Cheng Huang, Wei Zhang, Yifan Liang, Yijun Bei, Yuxiang Chen, <strong>Tao Feng</strong>, Xinpeng Pan, Zhitao Tan, et al.</p><p class="info"><span class="conference">TMLR, 2026</span> · <a href="https://arxiv.org/abs/2602.06052" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/AgentMemoryWorld/Awesome-Agent-Memory" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic RL&quot;]" data-year="2026" data-selected="true" data-search="memskill: learning and evolving memory skills for self-evolving agents haozhen zhang qihang long jiantao bao tao feng wei zhang hao yue wei wang agentic memory agentic rl memory agent self evolve">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2602.02474" target="_blank" rel="noopener">MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents</a></h3><p class="authors">Haozhen Zhang, Qihang Long, Jiantao Bao, <strong>Tao Feng</strong>, Wei Zhang, Hao Yue, Wei Wang</p><p class="info"><span class="conference">Arxiv, 2026</span> · <a href="https://arxiv.org/abs/2602.02474" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ViktorAxelsen/MemSkill" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic RL&quot;]" data-year="2026" data-selected="true" data-search="learning query-aware budget-tier routing for runtime agent memory haozhen zhang hao yue tao feng qihang long jiantao bao bo jin wei zhang xiangrong li jiaxuan you et al. agentic memory agentic rl memory agent router">
+        <div class="pub-image"><div class="topic-label">Agentic Memory</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2602.06025" target="_blank" rel="noopener">Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory</a></h3><p class="authors">Haozhen Zhang, Hao Yue, <strong>Tao Feng</strong>, Qihang Long, Jiantao Bao, Bo Jin, Wei Zhang, Xiangrong Li, Jiaxuan You, et al.</p><p class="info"><span class="conference">ICML, 2026</span> · <a href="https://arxiv.org/abs/2602.06025" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ViktorAxelsen/BudgetMem" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2026" data-selected="false" data-search="probing the knowledge boundary: an interactive agentic framework for deep knowledge extraction yifan yang shuo zhu tao feng ge liu jiaxuan you agentic graph intelligence agent llm evaluation">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2602.00959" target="_blank" rel="noopener">Probing the Knowledge Boundary: An Interactive Agentic Framework for Deep Knowledge Extraction</a></h3><p class="authors">Yifan Yang, Shuo Zhu, <strong>Tao Feng</strong>, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">ICML, 2026</span> · <a href="https://arxiv.org/abs/2602.00959" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/KnowledgeExtraction" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2026" data-selected="false" data-search="unirec: unified multimodal encoding for llm-based recommendations zijie lei tao feng zhigang hua yan xie guanyu lin shuang yang ge liu jiaxuan you agentic llm routing &amp; orchestration recsys llm multimodal">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2601.19423" target="_blank" rel="noopener">UniRec: Unified Multimodal Encoding for LLM-Based Recommendations</a></h3><p class="authors">Zijie Lei, <strong>Tao Feng</strong>, Zhigang Hua, Yan Xie, Guanyu Lin, Shuang Yang, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2026</span> · <a href="https://arxiv.org/abs/2601.19423" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/UniRec" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;]" data-year="2026" data-selected="false" data-search="fusionfactory: fusing llm capabilities with multi-llm log data tao feng* haozhen zhang* zijie lei pengrui han mostofa patwary mohammad shoeybi bryan catanzaro jiaxuan you agentic llm reasoning llm reasoning llm with rl agent">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2507.10540" target="_blank" rel="noopener">FusionFactory: Fusing LLM Capabilities with Multi-LLM Log Data</a></h3><p class="authors"><strong>Tao Feng</strong><sup>*</sup>, Haozhen Zhang<sup>*</sup>, Zijie Lei, Pengrui Han, Mostofa Patwary, Mohammad Shoeybi, Bryan Catanzaro, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2026</span> · <a href="https://arxiv.org/pdf/2507.10540" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/FusionFactory" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;, &quot;Agentic RL&quot;, &quot;Agentic Memory&quot;]" data-year="2026" data-selected="true" data-search="graphplanner: graph memory-augmented agentic routing for multi-agent llms tao feng haozhen zhang pengrui han zijie lei jiaxuan you agentic llm routing &amp; orchestration agentic rl agentic memory router agent graph memory peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://openreview.net/forum?id=GraphPlanner" target="_blank" rel="noopener">GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs</a></h3><p class="authors"><strong>Tao Feng</strong>, Haozhen Zhang, Pengrui Han, Zijie Lei, Jiaxuan You</p><p class="info"><span class="conference">ICLR, 2026</span> · <a href="https://openreview.net/forum?id=GraphPlanner" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GraphPlanner" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Memory&quot;, &quot;Agentic Graph Intelligence&quot;]" data-year="2026" data-selected="false" data-search="thought-retriever: don&#x27;t just retrieve raw data, retrieve thoughts tao feng* pengrui han* guanyu lin* ge liu jiaxuan you agentic memory agentic graph intelligence memory graph rag llm">
+        <div class="pub-image"><img src="images/Thought-Retriever1.jpg" alt="Illustration for Thought-Retriever: Don&#x27;t Just Retrieve Raw Data, Retrieve Thoughts" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://openreview.net/forum?id=emCcuhtENL" target="_blank" rel="noopener">Thought-Retriever: Don&#x27;t Just Retrieve Raw Data, Retrieve Thoughts</a></h3><p class="authors"><strong>Tao Feng</strong><sup>*</sup>, Pengrui Han<sup>*</sup>, Guanyu Lin<sup>*</sup>, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2026</span> · <a href="https://openreview.net/forum?id=emCcuhtENL" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/Thought-Retriever" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="personalizedrouter: personalized llm routing via graph-based user preference modeling zhongjie dai* tao feng* jiaxuan you agentic llm routing &amp; orchestration router graph personalization llm router peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2511.16883" target="_blank" rel="noopener">PersonalizedRouter: Personalized LLM Routing via Graph-based User Preference Modeling</a></h3><p class="authors">Zhongjie Dai<sup>*</sup>, <strong>Tao Feng</strong><sup>*</sup>, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2025</span> · <a href="https://arxiv.org/abs/2511.16883" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/PersonalizedRouter" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="gmtrouter: personalized llm router over multi-turn user interactions enze xie yihang sun tao feng jiaxuan you agentic llm routing &amp; orchestration router personalization llm router">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2511.08590" target="_blank" rel="noopener">GMTRouter: Personalized LLM Router over Multi-turn User Interactions</a></h3><p class="authors">Enze Xie, Yihang Sun, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2511.08590" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GMTRouter" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="researcharcade: graph interface for academic tasks jiaxin xu chao lin haofei yu tao feng jiaxuan you agentic graph intelligence graph agent demo">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2511.22036" target="_blank" rel="noopener">ResearchArcade: Graph Interface for Academic Tasks</a></h3><p class="authors">Jiaxin Xu, Chao Lin, Haofei Yu, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2511.22036" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/research-arcade" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;, &quot;Agentic RL&quot;]" data-year="2025" data-selected="true" data-search="multi-agent evolve: llm self-improve through co-evolution yixing chen yiding wang siqi zhu haofei yu tao feng muhan zhang mostofa patwary jiaxuan you agentic llm reasoning agentic rl llm reasoning self evolve agent">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2510.23595" target="_blank" rel="noopener">Multi-Agent Evolve: LLM Self-Improve through Co-evolution</a></h3><p class="authors">Yixing Chen, Yiding Wang, Siqi Zhu, Haofei Yu, <strong>Tao Feng</strong>, Muhan Zhang, Mostofa Patwary, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2510.23595" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/Multi-agent-Evolve" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="academiceval: live long-context llm benchmark haozhen zhang tao feng pengrui han jiaxuan you agentic graph intelligence evaluation llm peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2510.17725" target="_blank" rel="noopener">AcademicEval: Live Long-Context LLM Benchmark</a></h3><p class="authors">Haozhen Zhang, <strong>Tao Feng</strong>, Pengrui Han, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2025</span> · <a href="https://arxiv.org/abs/2510.17725" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/AcademicEval" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="graph world model tao feng yexin wu guanyu lin jiaxuan you agentic graph intelligence graph llm agent peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2507.10539" target="_blank" rel="noopener">Graph World Model</a></h3><p class="authors"><strong>Tao Feng</strong>, Yexin Wu, Guanyu Lin, Jiaxuan You</p><p class="info"><span class="conference">ICML, 2025</span> · <a href="https://arxiv.org/pdf/2507.10539" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GWM" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;, &quot;Agentic RL&quot;]" data-year="2025" data-selected="true" data-search="r1-ranker: teaching llm rankers to reason tao feng zhigang hua zijie lei yan xie shuang yang bo long jiaxuan you agentic llm reasoning agentic rl llm reasoning llm with rl recsys">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2506.21638" target="_blank" rel="noopener">R1-Ranker: Teaching LLM Rankers to Reason</a></h3><p class="authors"><strong>Tao Feng</strong>, Zhigang Hua, Zijie Lei, Yan Xie, Shuang Yang, Bo Long, Jiaxuan You</p><p class="info"><span class="conference">IJCAI 2025 Workshop on Causal Learning for Recommendation Systems</span> · <a href="https://arxiv.org/pdf/2506.21638" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/IRanker" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;, &quot;Agentic RL&quot;]" data-year="2025" data-selected="true" data-search="router-r1: teaching llms multi-round routing and aggregation via reinforcement learning haozhen zhang tao feng jiaxuan you agentic llm reasoning agentic rl llm reasoning llm with rl router peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2506.09033" target="_blank" rel="noopener">Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning</a></h3><p class="authors">Haozhen Zhang, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">NeurIPS, 2025</span> · <a href="https://arxiv.org/pdf/2506.09033" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/Router-R1" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2025" data-selected="true" data-search="epr-gail: an epr-enhanced hierarchical imitation learning framework to simulate complex user consumption behaviors tao feng yunke zhang huandong wang yong li agentic rl rl agent simulation">
+        <div class="pub-image"><div class="topic-label">Agentic RL</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2503.06392" target="_blank" rel="noopener">EPR-GAIL: An EPR-Enhanced Hierarchical Imitation Learning Framework to Simulate Complex User Consumption Behaviors</a></h3><p class="authors"><strong>Tao Feng</strong>, Yunke Zhang, Huandong Wang, Yong Li</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2503.06392" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Causal Discovery and Inference&quot;]" data-year="2025" data-selected="false" data-search="causal discovery and inference towards urban elements and associated factors tao feng yunke zhang xiaochen fan huandong wang yong li causal discovery and inference causal rl">
+        <div class="pub-image"><img src="images/Causal1.jpg" alt="Illustration for Causal Discovery and Inference towards Urban Elements and Associated Factors" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2503.06395" target="_blank" rel="noopener">Causal Discovery and Inference towards Urban Elements and Associated Factors</a></h3><p class="authors"><strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/pdf/2503.06395" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Causal Discovery and Inference&quot;]" data-year="2025" data-selected="false" data-search="causality enhanced origin-destination flow prediction in data-scarce cities tao feng yunke zhang xiaochen fan huandong wang yong li causal discovery and inference causal rl graph">
+        <div class="pub-image"><img src="images/OD1.jpg" alt="Illustration for Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2503.06398" target="_blank" rel="noopener">Causality Enhanced Origin-Destination Flow Prediction in Data-Scarce Cities</a></h3><p class="authors"><strong>Tao Feng</strong>, Yunke Zhang, Xiaochen Fan, Huandong Wang, Yong Li</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2503.06398" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="unified semantic and id representation learning for deep recommenders guanyu lin zhigang hua tao feng shuang yang bo long jiaxuan you agentic llm routing &amp; orchestration recsys llm">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2502.16474" target="_blank" rel="noopener">Unified Semantic and ID Representation Learning for Deep Recommenders</a></h3><p class="authors">Guanyu Lin, Zhigang Hua, <strong>Tao Feng</strong>, Shuang Yang, Bo Long, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2025</span> · <a href="https://arxiv.org/abs/2502.16474" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/Guanyu-Lin/Unified_Semantic_ID" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="graphrouter: a graph-based router for llm selections tao feng yanzhen shen jiaxuan you agentic llm routing &amp; orchestration router graph llm router peer reviewed">
+        <div class="pub-image"><img src="images/GraphRouter1.jpg" alt="Illustration for GraphRouter: A Graph-based Router for LLM Selections" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://openreview.net/forum?id=eU39PDsZtT" target="_blank" rel="noopener">GraphRouter: A Graph-based Router for LLM Selections</a></h3><p class="authors"><strong>Tao Feng</strong>, Yanzhen Shen, Jiaxuan You</p><p class="info"><span class="conference">ICLR, 2025</span> · <a href="https://openreview.net/forum?id=eU39PDsZtT" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GraphRouter" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="premium: llm personalization with individual-level preference feedback yihang sun tao feng ge liu jiaxuan you agentic llm routing &amp; orchestration personalization llm">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title">PREMIUM: LLM Personalization with Individual-level Preference Feedback</h3><p class="authors">Yihang Sun, <strong>Tao Feng</strong>, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2025</span></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Routing &amp; Orchestration&quot;]" data-year="2025" data-selected="false" data-search="causally-informed unified semantic and id representation learning guanyu lin tao feng jiaxuan you agentic llm routing &amp; orchestration recsys causal">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Routing &amp; Orchestration</div></div>
+        <div class="pub-card-body"><h3 class="title">Causally-Informed Unified Semantic and ID Representation Learning</h3><p class="authors">Guanyu Lin, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">IJCAI 2025 Workshop on Causal Learning for Recommendation Systems</span></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="researchtown: simulator of human research community haofei yu zhaochen hong zirui cheng kunlun zhu keyang xuan jinwei yao tao feng jiaxuan you agentic graph intelligence graph agent social agent simulation peer reviewed">
+        <div class="pub-image"><img src="images/researchtown1.jpg" alt="Illustration for Researchtown: Simulator of Human Research Community" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2412.17767" target="_blank" rel="noopener">Researchtown: Simulator of Human Research Community</a></h3><p class="authors">Haofei Yu, Zhaochen Hong, Zirui Cheng, Kunlun Zhu, Keyang Xuan, Jinwei Yao, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">ICML, 2025</span> · <a href="https://arxiv.org/pdf/2412.17767" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/research-town" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="graph of records: boosting retrieval augmented generation for long-context summarization with graphs haozhen zhang tao feng jiaxuan you agentic graph intelligence graph rag llm peer reviewed">
+        <div class="pub-image"><img src="images/GOR1.jpg" alt="Illustration for Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/pdf/2410.11001" target="_blank" rel="noopener">Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs</a></h3><p class="authors">Haozhen Zhang, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">ACL, 2025</span> · <a href="https://arxiv.org/pdf/2410.11001" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GoR" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2025" data-selected="false" data-search="grapheval: a lightweight graph-based llm framework for idea evaluation tao feng* yihang sun* jiaxuan you agentic graph intelligence graph evaluation llm peer reviewed">
+        <div class="pub-image"><img src="images/GraphEval1.jpg" alt="Illustration for GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://openreview.net/forum?id=5RUM1aIdok" target="_blank" rel="noopener">GraphEval: A Lightweight Graph-Based LLM Framework for Idea Evaluation</a></h3><p class="authors"><strong>Tao Feng</strong><sup>*</sup>, Yihang Sun<sup>*</sup>, Jiaxuan You</p><p class="info"><span class="conference">ICLR, 2025</span> · <a href="https://openreview.net/forum?id=5RUM1aIdok" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/GraphEval" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2024" data-selected="false" data-search="paper copilot: a self-evolving and efficient llm system for personalized academic assistance guanyu lin* tao feng* pengrui han* ge liu jiaxuan you agentic graph intelligence graph agent demo peer reviewed">
+        <div class="pub-image"><img src="images/papercopilot-1.png" alt="Illustration for Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2409.04593" target="_blank" rel="noopener">Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance</a></h3><p class="authors">Guanyu Lin<sup>*</sup>, <strong>Tao Feng</strong><sup>*</sup>, Pengrui Han<sup>*</sup>, Ge Liu, Jiaxuan You</p><p class="info"><span class="conference">EMNLP (System Demo), 2024</span> · <a href="https://arxiv.org/abs/2409.04593" target="_blank" rel="noopener">Paper</a> / <a href="https://huggingface.co/spaces/ulab-ai/ArxivCopilot" target="_blank" rel="noopener">Demo</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic AI for Science&quot;]" data-year="2024" data-selected="false" data-search="deep reinforcement learning for modelling protein complexes tao feng ziqi gao jiaxuan you chenyi zi yan zhou chen zhang jia li agentic ai for science ai for science rl graph peer reviewed">
+        <div class="pub-image"><img src="images/DRL1.jpg" alt="Illustration for Deep Reinforcement Learning for Modelling Protein Complexes" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2405.02299" target="_blank" rel="noopener">Deep Reinforcement Learning for Modelling Protein Complexes</a></h3><p class="authors"><strong>Tao Feng</strong>, Ziqi Gao, Jiaxuan You, Chenyi Zi, Yan Zhou, Chen Zhang, Jia Li</p><p class="info"><span class="conference">ICLR, 2024</span> · <a href="https://arxiv.org/abs/2405.02299" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic AI for Science&quot;]" data-year="2024" data-selected="false" data-search="molecular de novo design through transformer-based reinforcement learning tao feng pengcheng xu tianfan fu jimeng sun agentic ai for science ai for science rl llm">
+        <div class="pub-image"><img src="images/molecular1.jpg" alt="Illustration for Molecular De Novo Design through Transformer-based Reinforcement Learning" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2310.05365" target="_blank" rel="noopener">Molecular De Novo Design through Transformer-based Reinforcement Learning</a></h3><p class="authors"><strong>Tao Feng</strong>, Pengcheng Xu, Tianfan Fu, Jimeng Sun</p><p class="info"><span class="conference">Arxiv, 2024</span> · <a href="https://arxiv.org/abs/2310.05365" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Surveys&quot;]" data-year="2024" data-selected="false" data-search="how far are we from agi: are llms all we need? tao feng* chuanyang jin* jingyu liu* kunlun zhu* haoqin tu zirui cheng guanyu lin jiaxuan you surveys survey llm peer reviewed">
+        <div class="pub-image"><img src="images/AGI1.jpg" alt="Illustration for How Far Are We From AGI: Are LLMs All We Need?" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://openreview.net/forum?id=H2ZKqfNd0U" target="_blank" rel="noopener">How Far Are We From AGI: Are LLMs All We Need?</a></h3><p class="authors"><strong>Tao Feng</strong><sup>*</sup>, Chuanyang Jin<sup>*</sup>, Jingyu Liu<sup>*</sup>, Kunlun Zhu<sup>*</sup>, Haoqin Tu, Zirui Cheng, Guanyu Lin, Jiaxuan You</p><p class="info"><span class="conference">TMLR, 2024</span> · <a href="https://openreview.net/forum?id=H2ZKqfNd0U" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/ulab-uiuc/AGI-survey" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Surveys&quot;]" data-year="2024" data-selected="false" data-search="deep reinforcement learning for demand driven services in logistics and transportation systems: a survey zefang zong tao feng jingwei wang tong xia yong li surveys survey rl peer reviewed">
+        <div class="pub-image"><div class="topic-label">Surveys</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://dl.acm.org/doi/10.1145/3708325" target="_blank" rel="noopener">Deep Reinforcement Learning for Demand Driven Services in Logistics and Transportation Systems: A Survey</a></h3><p class="authors">Zefang Zong, <strong>Tao Feng</strong>, Jingwei Wang, Tong Xia, Yong Li</p><p class="info"><span class="conference">ACM TKDD, 2024</span> · <a href="https://dl.acm.org/doi/10.1145/3708325" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic LLM Reasoning&quot;]" data-year="2023" data-selected="false" data-search="citing: large language models create curriculum for instruction tuning tao feng zifeng wang jimeng sun agentic llm reasoning llm reasoning llm">
+        <div class="pub-image"><div class="topic-label">Agentic LLM Reasoning</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2310.02527" target="_blank" rel="noopener">Citing: Large Language Models Create Curriculum for Instruction Tuning</a></h3><p class="authors"><strong>Tao Feng</strong>, Zifeng Wang, Jimeng Sun</p><p class="info"><span class="conference">Arxiv, 2023</span> · <a href="https://arxiv.org/abs/2310.02527" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2023" data-selected="false" data-search="rdbench: ml benchmark for relational databases zizhao zhang yi yang lutong zou he wen tao feng jiaxuan you agentic graph intelligence graph for db evaluation">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://arxiv.org/abs/2310.16837" target="_blank" rel="noopener">RDBench: ML Benchmark for Relational Databases</a></h3><p class="authors">Zizhao Zhang, Yi Yang, Lutong Zou, He Wen, <strong>Tao Feng</strong>, Jiaxuan You</p><p class="info"><span class="conference">Arxiv, 2023</span> · <a href="https://arxiv.org/abs/2310.16837" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2023" data-selected="true" data-search="ilroute: a graph-based imitation learning method to unveil riders&#x27; routing strategies in food delivery service tao feng huan yan huandong wang wenzhen huang yuyang han hongsen liao jinghua hao yong li agentic rl agent rl graph peer reviewed">
+        <div class="pub-image"><img src="images/ILRoute1.jpg" alt="Illustration for ILRoute: A Graph-based Imitation Learning Method to Unveil Riders&#x27; Routing Strategies in Food Delivery Service" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://dl.acm.org/doi/abs/10.1145/3580305.3599844" target="_blank" rel="noopener">ILRoute: A Graph-based Imitation Learning Method to Unveil Riders&#x27; Routing Strategies in Food Delivery Service</a></h3><p class="authors"><strong>Tao Feng</strong>, Huan Yan, Huandong Wang, Wenzhen Huang, Yuyang Han, Hongsen Liao, Jinghua Hao, Yong Li</p><p class="info"><span class="conference">KDD, 2023</span> · <a href="https://dl.acm.org/doi/abs/10.1145/3580305.3599844" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2023" data-selected="true" data-search="gat-mf: graph attention mean field for very large scale multi-agent reinforcement learning qianyue hao wenzhen huang tao feng jian yuan yong li agentic rl rl agent graph peer reviewed">
+        <div class="pub-image"><img src="images/GAT-MF1.jpg" alt="Illustration for GAT-MF: Graph Attention Mean Field for Very Large Scale Multi-Agent Reinforcement Learning" loading="lazy" width="260" height="150"></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://dl.acm.org/doi/abs/10.1145/3580305.3599359" target="_blank" rel="noopener">GAT-MF: Graph Attention Mean Field for Very Large Scale Multi-Agent Reinforcement Learning</a></h3><p class="authors">Qianyue Hao, Wenzhen Huang, <strong>Tao Feng</strong>, Jian Yuan, Yong Li</p><p class="info"><span class="conference">KDD, 2023</span> · <a href="https://dl.acm.org/doi/abs/10.1145/3580305.3599359" target="_blank" rel="noopener">Paper</a> / <a href="https://github.com/tsinghua-fib-lab/Large-Scale-MARL-GATMF" target="_blank" rel="noopener">Code</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2023" data-selected="true" data-search="contact tracing and epidemic intervention via deep reinforcement learning tao feng sirui song tong xia yong li agentic rl rl agent peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic RL</div></div>
+        <div class="pub-card-body"><h3 class="title">Contact Tracing and Epidemic Intervention via Deep Reinforcement Learning</h3><p class="authors"><strong>Tao Feng</strong>, Sirui Song, Tong Xia, Yong Li</p><p class="info"><span class="conference">ACM TKDD, 2023</span></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2022" data-selected="true" data-search="precise mobility intervention for epidemic control using unobservable information via deep reinforcement learning tao feng tong xia xiaochen fan huandong wang zefang zong yong li agentic rl rl agent peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic RL</div></div>
+        <div class="pub-card-body"><h3 class="title"><a href="https://dl.acm.org/doi/abs/10.1145/3534678.3539195" target="_blank" rel="noopener">Precise Mobility Intervention for Epidemic Control Using Unobservable Information via Deep Reinforcement Learning</a></h3><p class="authors"><strong>Tao Feng</strong>, Tong Xia, Xiaochen Fan, Huandong Wang, Zefang Zong, Yong Li</p><p class="info"><span class="conference">KDD, 2022</span> · <a href="https://dl.acm.org/doi/abs/10.1145/3534678.3539195" target="_blank" rel="noopener">Paper</a></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic RL&quot;]" data-year="2022" data-selected="true" data-search="reviving the economy while saving lives: a deep reinforcement learning approach for smart poi reopening tao feng huandong wang xiaochen fan tong xia yong li agentic rl rl agent peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic RL</div></div>
+        <div class="pub-card-body"><h3 class="title">Reviving the Economy While Saving Lives: A Deep Reinforcement Learning Approach for Smart POI Reopening</h3><p class="authors"><strong>Tao Feng</strong>, Huandong Wang, Xiaochen Fan, Tong Xia, Yong Li</p><p class="info"><span class="conference">SIGSPATIAL, 2022</span></p></div>
+      </article><article class="pub-card" data-categories="[&quot;Agentic Graph Intelligence&quot;]" data-year="2022" data-selected="false" data-search="a multi-scale ensemble learning model for cellular traffic prediction chengfeng gao* tao feng* huandong wang depeng jin jie feng xianghui wang liping zhu chao deng agentic graph intelligence temporal graph peer reviewed">
+        <div class="pub-image"><div class="topic-label">Agentic Graph Intelligence</div></div>
+        <div class="pub-card-body"><h3 class="title">A Multi-scale Ensemble Learning Model for Cellular Traffic Prediction</h3><p class="authors">Chengfeng Gao<sup>*</sup>, <strong>Tao Feng</strong><sup>*</sup>, Huandong Wang, Depeng Jin, Jie Feng, Xianghui Wang, Liping Zhu, Chao Deng</p><p class="info"><span class="conference">IEEE GLOBECOM, 2022</span></p></div>
+      </article></div>
+      <div class="no-results" hidden><p>No publications match your search.</p><button type="button" id="clear-filters">Show all publications</button></div>
+    </section>
+  </main>
+  <footer id="footer"><p>© Tao Feng · Layout adapted from <a href="https://github.com/qiancheng0/qiancheng0.github.io" target="_blank" rel="noopener">Cheng Qian’s homepage</a></p></footer>
 </body>
 </html>
