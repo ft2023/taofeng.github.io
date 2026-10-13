@@ -15,7 +15,7 @@ The site uses relative asset paths, so it can be served from either a domain roo
 
 The earlier site credited [Jon Barron’s academic website](https://jonbarron.info/).
 
-Publication metadata and research directions follow the supplied October 2026 CV. Selected papers are accepted ICML, NeurIPS, and ICLR publications from the Ph.D. period (August 2024 onward). Preprints and earlier papers remain in the complete views.
+Publication metadata and research directions follow the supplied October 2026 CV. Selected papers are accepted ICML, NeurIPS, and ICLR publications from the Ph.D. period (August 2024 onward), plus the ICLR 2024 paper on protein complex modelling. Preprints and earlier papers remain in the complete views.
 
 ## Paper figures
 
