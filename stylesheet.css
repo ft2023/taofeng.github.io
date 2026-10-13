@@ -87,3 +87,6 @@ section { margin-bottom:32px; }
 .research-direction { margin: 0 0 16px; }
 .research-direction h3 { color: var(--main-color); font-size: 1rem; font-weight: 600; margin: 0 0 5px; }
 .selection-note { color: #666; font-size: .85rem; margin: 12px 0 6px; }
+
+.figure-link { display: block; width: 100%; }
+.figure-link:hover img { opacity: .9; }
